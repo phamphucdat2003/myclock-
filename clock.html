@@ -1,0 +1,4500 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      background-color: #f2f2f2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .canter{
+     text-align: center;
+    }
+    .containerall{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 1125px;
+
+    }
+    .container{
+    display: flex;
+    flex-wrap: wrap;
+    width: 225px; /* Đặt chiều rộng của container tùy ý */
+    }
+    .containerx{
+    display: flex;
+    flex-wrap: wrap;
+    width: 75px; /* Đặt chiều rộng của container tùy ý */
+    }
+    .containery{
+    display: flex;
+    flex-wrap: wrap;
+    width: 300px; /* Đặt chiều rộng của container tùy ý */
+    }
+    .clock {
+    position: relative;
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .hand {
+    position: absolute;
+    background-color: #000;
+    transition: transform 0.5s ease-in-out;
+    }
+
+    .hourHand {
+    width: 1px;
+    height: 30px;
+    top: calc(50% - 30px);
+    left: calc(50% - 0.5px);
+    transform-origin: bottom center;
+    z-index: 2;
+    }
+
+    .minuteHand {
+    width: 1px;
+    height: 30px;
+    top: calc(50% - 30px);
+    left: calc(50% - 0.5px);
+    transform-origin: bottom center;
+    z-index: 2;
+    }
+    .button-29 {
+    margin-top:10px ;
+    align-items: center;
+    appearance: none;
+    background-image: radial-gradient(100% 100% at 100% 0, #5adaff 0, #5468ff 100%);
+    border: 0;
+    border-radius: 6px;
+    box-shadow: rgba(45, 35, 66, .4) 0 2px 4px,rgba(45, 35, 66, .3) 0 7px 13px -3px,rgba(58, 65, 111, .5) 0 -3px 0 inset;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: "JetBrains Mono",monospace;
+    height: 48px;
+    justify-content: center;
+    line-height: 1;
+    list-style: none;
+    overflow: hidden;
+    padding-left: 16px;
+    padding-right: 16px;
+    position: relative;
+    text-align: left;
+    text-decoration: none;
+    transition: box-shadow .15s,transform .15s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    will-change: box-shadow,transform;
+    font-size: 18px;
+    }
+
+    .button-29:focus {
+    box-shadow: #3c4fe0 0 0 0 1.5px inset, rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+    }
+
+    .button-29:hover {
+    box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+    transform: translateY(-2px);
+    }
+
+    .button-29:active {
+    box-shadow: #3c4fe0 0 3px 7px inset;
+    transform: translateY(2px);
+    }
+    </style>
+</head>
+<body>
+    <div class="canter">
+        <div class="containerall">
+            <div id="hourleft" class = "containery">
+                <div class="clock">
+                    <div class="hand hourHand represent"></div>
+                </div>
+                <div class="clock">
+                    <div class="hand hourHand represent"></div>
+                </div>
+                <div class="clock">
+                    <div class="hand hourHand represent"></div>
+                </div>
+                <div class="clock">
+                    <div class="hand hourHand represent"></div>
+                </div>
+                <div class="clock">
+                    <div class="hand hourHand represent"></div>
+                </div>
+                <div class="clock">
+                <div id="hourHandleft1" class="hand hourHand"></div>
+                <div id="minuteHandleft1" class="hand minuteHand"></div>
+                </div>
+                <div class="clock">
+                <div id="hourHandleft2" class="hand hourHand"></div>
+                <div id="minuteHandleft2" class="hand minuteHand"></div>
+                </div>
+                <div class="clock">
+                <div id="hourHandleft3" class="hand hourHand"></div>
+                <div id="minuteHandleft3" class="hand minuteHand"></div>
+                </div>
+                <div class="clock">
+                    <div class="hand hourHand represent"></div>
+                </div>
+                <div class="clock">
+                <div id="hourHandleft4" class="hand hourHand"></div>
+                <div id="minuteHandleft4" class="hand minuteHand"></div>
+                </div>
+                <div class="clock">
+                <div id="hourHandleft5" class="hand hourHand"></div>
+                <div id="minuteHandleft5" class="hand minuteHand"></div>
+                </div>
+                <div class="clock">
+                <div id="hourHandleft6" class="hand hourHand"></div>
+                <div id="minuteHandleft6" class="hand minuteHand"></div>
+                </div>
+                <div class="clock">
+                    <div class="hand hourHand represent"></div>
+                </div>
+                <div class="clock">
+                <div id="hourHandleft7" class="hand hourHand"></div>
+                <div id="minuteHandleft7" class="hand minuteHand"></div>
+                </div>
+                <div class="clock">
+                <div id="hourHandleft8" class="hand hourHand"></div>
+                <div id="minuteHandleft8" class="hand minuteHand"></div>
+                </div>
+                <div class="clock">
+                <div id="hourHandleft9" class="hand hourHand"></div>
+                <div id="minuteHandleft9" class="hand minuteHand"></div>
+                </div>
+                <div class="clock">
+                    <div class="hand hourHand represent"></div>
+                </div>
+                <div class="clock">
+                <div id="hourHandleft10" class="hand hourHand"></div>
+                <div id="minuteHandleft10" class="hand minuteHand"></div>
+                </div>
+                <div class="clock">
+                <div id="hourHandleft11" class="hand hourHand"></div>
+                <div id="minuteHandleft11" class="hand minuteHand"></div>
+                </div>
+                <div class="clock">
+                <div id="hourHandleft12" class="hand hourHand"></div>
+                <div id="minuteHandleft12" class="hand minuteHand"></div>
+                </div>
+                <div class="clock">
+                    <div class="hand hourHand represent"></div>
+                </div>
+                <div class="clock">
+                <div id="hourHandleft13" class="hand hourHand"></div>
+                <div id="minuteHandleft13" class="hand minuteHand"></div>
+                </div>
+                <div class="clock">
+                <div id="hourHandleft14" class="hand hourHand"></div>
+                <div id="minuteHandleft14" class="hand minuteHand"></div>
+                </div>
+                <div class="clock">
+                <div id="hourHandleft15" class="hand hourHand"></div>
+                <div id="minuteHandleft15" class="hand minuteHand"></div>
+                </div>
+                <div class="clock">
+                    <div class="hand hourHand represent"></div>
+                </div>
+                <div class="clock">
+                <div id="hourHandleft16" class="hand hourHand"></div>
+                <div id="minuteHandleft16" class="hand minuteHand"></div>
+                </div>
+                <div class="clock">
+                <div id="hourHandleft17" class="hand hourHand"></div>
+                <div id="minuteHandleft17" class="hand minuteHand"></div>
+                </div>
+                <div class="clock">
+                <div id="hourHandleft18" class="hand hourHand"></div>
+                <div id="minuteHandleft18" class="hand minuteHand"></div>
+                </div>
+                <div class="clock">
+                    <div class="hand hourHand represent"></div>
+                </div>
+                <div class="clock">
+                    <div class="hand hourHand represent"></div>
+                </div>
+                <div class="clock">
+                    <div class="hand hourHand represent"></div>
+                </div>
+                <div class="clock">
+                    <div class="hand hourHand represent"></div>
+                </div>
+            </div>
+            <div id="hourright" class = "container">
+                <div class="clock">
+                    <div class="hand hourHand represent"></div>
+                </div>
+                <div class="clock">
+                    <div class="hand hourHand represent"></div>
+                </div>
+                <div class="clock">
+                    <div class="hand hourHand represent"></div>
+                </div>
+                <div class="clock">
+                <div id="hourHandright1" class="hand hourHand"></div>
+                <div id="minuteHandright1" class="hand minuteHand"></div>
+                </div>
+                <div class="clock">
+                <div id="hourHandright2" class="hand hourHand"></div>
+                <div id="minuteHandright2" class="hand minuteHand"></div>
+                </div>
+                <div class="clock">
+                <div id="hourHandright3" class="hand hourHand"></div>
+                <div id="minuteHandright3" class="hand minuteHand"></div>
+                </div>
+                <div class="clock">
+                <div id="hourHandright4" class="hand hourHand"></div>
+                <div id="minuteHandright4" class="hand minuteHand"></div>
+                </div>
+                <div class="clock">
+                <div id="hourHandright5" class="hand hourHand"></div>
+                <div id="minuteHandright5" class="hand minuteHand"></div>
+                </div>
+                <div class="clock">
+                <div id="hourHandright6" class="hand hourHand"></div>
+                <div id="minuteHandright6" class="hand minuteHand"></div>
+                </div>
+                <div class="clock">
+                <div id="hourHandright7" class="hand hourHand"></div>
+                <div id="minuteHandright7" class="hand minuteHand"></div>
+                </div>
+                <div class="clock">
+                <div id="hourHandright8" class="hand hourHand"></div>
+                <div id="minuteHandright8" class="hand minuteHand"></div>
+                </div>
+                <div class="clock">
+                <div id="hourHandright9" class="hand hourHand"></div>
+                <div id="minuteHandright9" class="hand minuteHand"></div>
+                </div>
+                <div class="clock">
+                <div id="hourHandright10" class="hand hourHand"></div>
+                <div id="minuteHandright10" class="hand minuteHand"></div>
+                </div>
+                <div class="clock">
+                <div id="hourHandright11" class="hand hourHand"></div>
+                <div id="minuteHandright11" class="hand minuteHand"></div>
+                </div>
+                <div class="clock">
+                <div id="hourHandright12" class="hand hourHand"></div>
+                <div id="minuteHandright12" class="hand minuteHand"></div>
+                </div>
+                <div class="clock">
+                <div id="hourHandright13" class="hand hourHand"></div>
+                <div id="minuteHandright13" class="hand minuteHand"></div>
+                </div>
+                <div class="clock">
+                <div id="hourHandright14" class="hand hourHand"></div>
+                <div id="minuteHandright14" class="hand minuteHand"></div>
+                </div>
+                <div class="clock">
+                <div id="hourHandright15" class="hand hourHand"></div>
+                <div id="minuteHandright15" class="hand minuteHand"></div>
+                </div>
+                <div class="clock">
+                <div id="hourHandright16" class="hand hourHand"></div>
+                <div id="minuteHandright16" class="hand minuteHand"></div>
+                </div>
+                <div class="clock">
+                <div id="hourHandright17" class="hand hourHand"></div>
+                <div id="minuteHandright17" class="hand minuteHand"></div>
+                </div>
+                <div class="clock">
+                <div id="hourHandright18" class="hand hourHand"></div>
+                <div id="minuteHandright18" class="hand minuteHand"></div>
+                </div>
+                <div class="clock">
+                    <div class="hand hourHand represent"></div>
+                </div>
+                <div class="clock">
+                    <div class="hand hourHand represent"></div>
+                </div>
+                <div class="clock">
+                    <div class="hand hourHand represent"></div>
+                </div>
+            </div>
+        
+            <div class="containerx">
+                    <div class="clock">
+                        <div class="hand hourHand represent"></div>
+                    </div>
+                    <div class="clock">
+                        <div class="hand hourHand represent"></div>
+                    </div>
+                    <div class="clock">
+                        <div class="hand hourHand represent"></div>
+                    </div>
+                    <div class="clock">
+                        <div class="hand hourHand represent"></div>
+                    </div>
+                    <div class="clock">
+                        <div class="hand hourHand represent"></div>
+                    </div>
+                    <div class="clock">
+                        <div class="hand hourHand represent"></div>
+                    </div>
+                    <div class="clock">
+                        <div class="hand hourHand represent"></div>
+                    </div>
+                    <div class="clock">
+                        <div class="hand hourHand represent"></div>
+                    </div>
+            </div>
+        
+            <div id="minuteleft" class = "container">
+                <div class="clock">
+                    <div class="hand hourHand represent"></div>
+                </div>
+                <div class="clock">
+                    <div class="hand hourHand represent"></div>
+                </div>
+                <div class="clock">
+                    <div class="hand hourHand represent"></div>
+                </div>
+                <div class="clock">
+                <div id="hourHandminuteleft1" class="hand hourHand"></div>
+                <div id="minuteHandminuteleft1" class="hand minuteHand"></div>
+                </div>
+                <div class="clock">
+                <div id="hourHandminuteleft2" class="hand hourHand"></div>
+                <div id="minuteHandminuteleft2" class="hand minuteHand"></div>
+                </div>
+                <div class="clock">
+                <div id="hourHandminuteleft3" class="hand hourHand"></div>
+                <div id="minuteHandminuteleft3" class="hand minuteHand"></div>
+                </div>
+                <div class="clock">
+                <div id="hourHandminuteleft4" class="hand hourHand"></div>
+                <div id="minuteHandminuteleft4" class="hand minuteHand"></div>
+                </div>
+                <div class="clock">
+                <div id="hourHandminuteleft5" class="hand hourHand"></div>
+                <div id="minuteHandminuteleft5" class="hand minuteHand"></div>
+                </div>
+                <div class="clock">
+                <div id="hourHandminuteleft6" class="hand hourHand"></div>
+                <div id="minuteHandminuteleft6" class="hand minuteHand"></div>
+                </div>
+                <div class="clock">
+                <div id="hourHandminuteleft7" class="hand hourHand"></div>
+                <div id="minuteHandminuteleft7" class="hand minuteHand"></div>
+                </div>
+                <div class="clock">
+                <div id="hourHandminuteleft8" class="hand hourHand"></div>
+                <div id="minuteHandminuteleft8" class="hand minuteHand"></div>
+                </div>
+                <div class="clock">
+                <div id="hourHandminuteleft9" class="hand hourHand"></div>
+                <div id="minuteHandminuteleft9" class="hand minuteHand"></div>
+                </div>
+                <div class="clock">
+                <div id="hourHandminuteleft10" class="hand hourHand"></div>
+                <div id="minuteHandminuteleft10" class="hand minuteHand"></div>
+                </div>
+                <div class="clock">
+                <div id="hourHandminuteleft11" class="hand hourHand"></div>
+                <div id="minuteHandminuteleft11" class="hand minuteHand"></div>
+                </div>
+                <div class="clock">
+                <div id="hourHandminuteleft12" class="hand hourHand"></div>
+                <div id="minuteHandminuteleft12" class="hand minuteHand"></div>
+                </div>
+                <div class="clock">
+                <div id="hourHandminuteleft13" class="hand hourHand"></div>
+                <div id="minuteHandminuteleft13" class="hand minuteHand"></div>
+                </div>
+                <div class="clock">
+                <div id="hourHandminuteleft14" class="hand hourHand"></div>
+                <div id="minuteHandminuteleft14" class="hand minuteHand"></div>
+                </div>
+                <div class="clock">
+                <div id="hourHandminuteleft15" class="hand hourHand"></div>
+                <div id="minuteHandminuteleft15" class="hand minuteHand"></div>
+                </div>
+                <div class="clock">
+                <div id="hourHandminuteleft16" class="hand hourHand"></div>
+                <div id="minuteHandminuteleft16" class="hand minuteHand"></div>
+                </div>
+                <div class="clock">
+                <div id="hourHandminuteleft17" class="hand hourHand"></div>
+                <div id="minuteHandminuteleft17" class="hand minuteHand"></div>
+                </div>
+                <div class="clock">
+                <div id="hourHandminuteleft18" class="hand hourHand"></div>
+                <div id="minuteHandminuteleft18" class="hand minuteHand"></div>
+                </div>
+                <div class="clock">
+                    <div class="hand hourHand represent"></div>
+                </div>
+                <div class="clock">
+                    <div class="hand hourHand represent"></div>
+                </div>
+                <div class="clock">
+                    <div class="hand hourHand represent"></div>
+                </div>
+            </div>
+            <div id="minuteright" class = "containery">
+                <div class="clock">
+                    <div class="hand hourHand represent"></div>
+                </div>
+                <div class="clock">
+                    <div class="hand hourHand represent"></div>
+                </div>
+                <div class="clock">
+                    <div class="hand hourHand represent"></div>
+                </div>
+                <div class="clock">
+                    <div class="hand hourHand represent"></div>
+                </div>
+                <div class="clock">
+                <div id="hourHandminuteright1" class="hand hourHand"></div>
+                <div id="minuteHandminuteright1" class="hand minuteHand"></div>
+                </div>
+                <div class="clock">
+                <div id="hourHandminuteright2" class="hand hourHand"></div>
+                <div id="minuteHandminuteright2" class="hand minuteHand"></div>
+                </div>
+                <div class="clock">
+                <div id="hourHandminuteright3" class="hand hourHand"></div>
+                <div id="minuteHandminuteright3" class="hand minuteHand"></div>
+                </div>
+                <div class="clock">
+                    <div class="hand hourHand represent"></div>
+                </div>
+                <div class="clock">
+                <div id="hourHandminuteright4" class="hand hourHand"></div>
+                <div id="minuteHandminuteright4" class="hand minuteHand"></div>
+                </div>
+                <div class="clock">
+                <div id="hourHandminuteright5" class="hand hourHand"></div>
+                <div id="minuteHandminuteright5" class="hand minuteHand"></div>
+                </div>
+                <div class="clock">
+                <div id="hourHandminuteright6" class="hand hourHand"></div>
+                <div id="minuteHandminuteright6" class="hand minuteHand"></div>
+                </div>
+                <div class="clock">
+                    <div class="hand hourHand represent"></div>
+                </div>
+                <div class="clock">
+                <div id="hourHandminuteright7" class="hand hourHand"></div>
+                <div id="minuteHandminuteright7" class="hand minuteHand"></div>
+                </div>
+                <div class="clock">
+                <div id="hourHandminuteright8" class="hand hourHand"></div>
+                <div id="minuteHandminuteright8" class="hand minuteHand"></div>
+                </div>
+                <div class="clock">
+                <div id="hourHandminuteright9" class="hand hourHand"></div>
+                <div id="minuteHandminuteright9" class="hand minuteHand"></div>
+                </div>
+                <div class="clock">
+                    <div class="hand hourHand represent"></div>
+                </div>
+                <div class="clock">
+                <div id="hourHandminuteright10" class="hand hourHand"></div>
+                <div id="minuteHandminuteright10" class="hand minuteHand"></div>
+                </div>
+                <div class="clock">
+                <div id="hourHandminuteright11" class="hand hourHand"></div>
+                <div id="minuteHandminuteright11" class="hand minuteHand"></div>
+                </div>
+                <div class="clock">
+                <div id="hourHandminuteright12" class="hand hourHand"></div>
+                <div id="minuteHandminuteright12" class="hand minuteHand"></div>
+                </div>
+                <div class="clock">
+                    <div class="hand hourHand represent"></div>
+                </div>
+                <div class="clock">
+                <div id="hourHandminuteright13" class="hand hourHand"></div>
+                <div id="minuteHandminuteright13" class="hand minuteHand"></div>
+                </div>
+                <div class="clock">
+                <div id="hourHandminuteright14" class="hand hourHand"></div>
+                <div id="minuteHandminuteright14" class="hand minuteHand"></div>
+                </div>
+                <div class="clock">
+                <div id="hourHandminuteright15" class="hand hourHand"></div>
+                <div id="minuteHandminuteright15" class="hand minuteHand"></div>
+                </div>
+                <div class="clock">
+                    <div class="hand hourHand represent"></div>
+                </div>
+                <div class="clock">
+                <div id="hourHandminuteright16" class="hand hourHand"></div>
+                <div id="minuteHandminuteright16" class="hand minuteHand"></div>
+                </div>
+                <div class="clock">
+                <div id="hourHandminuteright17" class="hand hourHand"></div>
+                <div id="minuteHandminuteright17" class="hand minuteHand"></div>
+                </div>
+                <div class="clock">
+                <div id="hourHandminuteright18" class="hand hourHand"></div>
+                <div id="minuteHandminuteright18" class="hand minuteHand"></div>
+                </div>
+                <div class="clock">
+                    <div class="hand hourHand represent"></div>
+                </div>
+                <div class="clock">
+                    <div class="hand hourHand represent"></div>
+                </div>
+                <div class="clock">
+                    <div class="hand hourHand represent"></div>
+                </div>
+                <div class="clock">
+                    <div class="hand hourHand represent"></div>
+                </div>
+                <div class="clock">
+                    <div class="hand hourHand represent"></div>
+                </div>
+            </div>
+        </div>
+        <input type="checkbox" id="checkbox-29" style="display:none;">
+        <label for="checkbox-29" class = "button-29">REAL TIME</label>   
+    </div>
+
+
+  <script>
+    function getRandomRotation() {
+      return Math.floor(Math.random() * 24);
+    }
+    
+    
+    var elements = document.querySelectorAll('.represent');
+    function representbyclass(){
+        var date = new Date();
+        var seconds = date.getSeconds();
+        var secondRotation = seconds * 6; // 6 degrees for each second
+        elements.forEach(function(element) {
+            element.style.transform = "rotate(" + secondRotation + "deg)";
+        });
+    }
+    setInterval(representbyclass,1000);
+
+
+
+
+    //hourright------------------------------------------------
+    const rotateHandshourright1 =(a) =>{
+        let x;
+        let y;
+        switch (a) {
+            case 0:
+                x = 90;
+                y = 180;
+                break;
+            case 1:
+                x = 90;
+                y = 180;
+                break;
+            case 2:
+                x = 90;
+                y = 180;
+                break;
+            case 3:
+                x = 90;
+                y = 180;
+                break;
+            case 4:
+                x = 90;
+                y = 180;
+                break;
+            case 5:
+                x = 90;
+                y = 180;
+                break;
+            case 6:
+                x = 90;
+                y = 180;
+                break;
+            case 7:
+                x = 90;
+                y = 180;
+                break;
+            case 8:
+                x = 90;
+                y = 180;
+                break;
+            case 9:
+                x = 90;
+                y = 180;
+                break;
+            default:
+                break;
+        }
+        var hourHand = document.getElementById("hourHandright1");
+        var minuteHand = document.getElementById("minuteHandright1");
+        hourHand.style.transform = "rotate(" + x + "deg)";
+        minuteHand.style.transform = "rotate(" + y + "deg)";
+    };
+    const rotateHandshourright2 =(a) =>{
+        let x;
+        let y;
+        switch (a) {
+            case 0:
+                x = 90;
+                y = 270;
+                break;
+            case 1:
+                x = 90;
+                y = 270;
+                break;
+            case 2:
+                x = 90;
+                y = 270;
+                break;
+            case 3:
+                x = 90;
+                y = 270;
+                break;
+            case 4:
+                x = 180;
+                y = 270;
+                break;
+            case 5:
+                x = 90;
+                y = 270;
+                break;
+            case 6:
+                x = 90;
+                y = 270;
+                break;
+            case 7:
+                x = 90;
+                y = 270;
+                break;
+            case 8:
+                x = 90;
+                y = 270;
+                break;
+            case 9:
+                x = 90;
+                y = 270;
+                break;
+            default:
+                break;
+        }
+        var hourHand = document.getElementById("hourHandright2");
+        var minuteHand = document.getElementById("minuteHandright2");
+        hourHand.style.transform = "rotate(" + x + "deg)";
+        minuteHand.style.transform = "rotate(" + y + "deg)";
+    };
+    const rotateHandshourright3 =(a) =>{
+        let x;
+        let y;
+        switch (a) {
+            case 0:
+                x = 180;
+                y = 270;
+                break;
+            case 1:
+                x = 180;
+                y = 270;
+                break;
+            case 2:
+                x = 180;
+                y = 270;
+                break;
+            case 3:
+                x = 180;
+                y = 270;
+                break;
+            case 4:
+                x = 180;
+                y = 270;
+                break;
+            case 5:
+                x = 180;
+                y = 270;
+                break;
+            case 6:
+                x = 180;
+                y = 270;
+                break;
+            case 7:
+                x = 180;
+                y = 270;
+                break;
+            case 8:
+                x = 180;
+                y = 270;
+                break;
+            case 9:
+                x = 180;
+                y = 270;
+                break;
+            default:
+                break;
+        }
+        var hourHand = document.getElementById("hourHandright3");
+        var minuteHand = document.getElementById("minuteHandright3");
+        hourHand.style.transform = "rotate(" + x + "deg)";
+        minuteHand.style.transform = "rotate(" + y + "deg)";
+    };
+    const rotateHandshourright4 =(a) =>{
+        let x;
+        let y;
+        switch (a) {
+            case 0:
+                x = 0;
+                y = 180;
+                break;
+            case 1:
+                x = 0;
+                y = 90;
+                break;
+            case 2:
+                x = 0;
+                y = 90;
+                break;
+            case 3:
+                x = 0;
+                y = 90;
+                break;
+            case 4:
+                x = 0;
+                y = 180;
+                break;
+            case 5:
+                x = 0;
+                y = 180;
+                break;
+            case 6:
+                x = 0;
+                y = 180;
+                break;
+            case 7:
+                x = 0;
+                y = 90;
+                break;
+            case 8:
+                x = 0;
+                y = 180;
+                break;
+            case 9:
+                x = 0;
+                y = 180;
+                break;
+            default:
+                break;
+        }
+        var hourHand = document.getElementById("hourHandright4");
+        var minuteHand = document.getElementById("minuteHandright4");
+        hourHand.style.transform = "rotate(" + x + "deg)";
+        minuteHand.style.transform = "rotate(" + y + "deg)";
+    };
+    const rotateHandshourright5 =(a) =>{
+        let x;
+        let y;
+        switch (a) {
+            case 0:
+                x = 180;
+                y = 180;
+                break;
+            case 1:
+                x = 180;
+                y = 270;
+                break;
+            case 2:
+                x = 180;
+                y = 270;
+                break;
+            case 3:
+                x = 180;
+                y = 270;
+                break;
+            case 4:
+                x = 0;
+                y = 180;
+                break;
+            case 5:
+                x = 90;
+                y = 180;
+                break;
+            case 6:
+                x = 90;
+                y = 180;
+                break;
+            case 7:
+                x = 180;
+                y = 270;
+                break;
+            case 8:
+                x = 0;
+                y = 180;
+                break;
+            case 9:
+                x = 0;
+                y = 180;
+                break;
+            default:
+                break;
+        }
+        var hourHand = document.getElementById("hourHandright5");
+        var minuteHand = document.getElementById("minuteHandright5");
+        hourHand.style.transform = "rotate(" + x + "deg)";
+        minuteHand.style.transform = "rotate(" + y + "deg)";
+    };
+    const rotateHandshourright6 =(a) =>{
+        let x;
+        let y;
+        switch (a) {
+            case 0:
+                x = 0;
+                y = 180;
+                break;
+            case 1:
+                x = 0;
+                y = 180;
+                break;
+            case 2:
+                x = 0;
+                y = 180;
+                break;
+            case 3:
+                x = 0;
+                y = 180;
+                break;
+            case 4:
+                x = 0;
+                y = 180;
+                break;
+            case 5:
+                x = 0;
+                y = 270;
+                break;
+            case 6:
+                x = 0;
+                y = 270;
+                break;
+            case 7:
+                x = 0;
+                y = 180;
+                break;
+            case 8:
+                x = 0;
+                y = 180;
+                break;
+            case 9:
+                x = 0;
+                y = 180;
+                break;
+            default:
+                break;
+        }
+        var hourHand = document.getElementById("hourHandright6");
+        var minuteHand = document.getElementById("minuteHandright6");
+        hourHand.style.transform = "rotate(" + x + "deg)";
+        minuteHand.style.transform = "rotate(" + y + "deg)";
+    };
+    const rotateHandshourright7 =(a) =>{
+        let x;
+        let y;
+        switch (a) {
+            case 0:
+                x = 0;
+                y = 180;
+                break;
+            case 1:
+                x = 270;
+                y = 270;
+                break;
+            case 2:
+                x = 90;
+                y = 180;
+                break;
+            case 3:
+                x = 90;
+                y = 180;
+                break;
+            case 4:
+                x = 0;
+                y = 180;
+                break;
+            case 5:
+                x = 0;
+                y = 180;
+                break;
+            case 6:
+                x = 0;
+                y = 180;
+                break;
+            case 7:
+                x = 270;
+                y = 270;
+                break;
+            case 8:
+                x = 0;
+                y = 90+45;
+                break;
+            case 9:
+                x = 0;
+                y = 180;
+                break;
+            default:
+                break;
+        }
+        var hourHand = document.getElementById("hourHandright7");
+        var minuteHand = document.getElementById("minuteHandright7");
+        hourHand.style.transform = "rotate(" + x + "deg)";
+        minuteHand.style.transform = "rotate(" + y + "deg)";
+    };
+    const rotateHandshourright8 =(a) =>{
+        let x;
+        let y;
+        switch (a) {
+            case 0:
+                x = 180;
+                y = 0;
+                break;
+            case 1:
+                x = 180;
+                y = 0;
+                break;
+            case 2:
+                x = 270;
+                y = 0;
+                break;
+            case 3:
+                x = 270;
+                y = 0;
+                break;
+            case 4:
+                x = 0;
+                y = 90;
+                break;
+            case 5:
+                x = 0;
+                y = 90;
+                break;
+            case 6:
+                x = 0;
+                y = 90;
+                break;
+            case 7:
+                x = 0;
+                y = 180 + 45;
+                break;
+            case 8:
+                x = 0;
+                y = 0;
+                break;
+            case 9:
+                x = 0;
+                y = 0;
+                break;
+            default:
+                break;
+        }
+        var hourHand = document.getElementById("hourHandright8");
+        var minuteHand = document.getElementById("minuteHandright8");
+        hourHand.style.transform = "rotate(" + x + "deg)";
+        minuteHand.style.transform = "rotate(" + y + "deg)";
+    };
+    const rotateHandshourright9 =(a) =>{
+        let x;
+        let y;
+        switch (a) {
+            case 0:
+                x = 0;
+                y = 180;
+                break;
+            case 1:
+                x = 0;
+                y = 180;
+                break;
+            case 2:
+                x = 0;
+                y = 180;
+                break;
+            case 3:
+                x = 0;
+                y = 180;
+                break;
+            case 4:
+                x = 0;
+                y = 180;
+                break;
+            case 5:
+                x = 270;
+                y = 180;
+                break;
+            case 6:
+                x = 270;
+                y = 180;
+                break;
+            case 7:
+                x = 0;
+                y = 180 + 45;
+                break;
+            case 8:
+                x = 0;
+                y = 180 + 45;
+                break;
+            case 9:
+                x = 0;
+                y = 180;
+                break;
+            default:
+                break;
+        }
+        var hourHand = document.getElementById("hourHandright9");
+        var minuteHand = document.getElementById("minuteHandright9");
+        hourHand.style.transform = "rotate(" + x + "deg)";
+        minuteHand.style.transform = "rotate(" + y + "deg)";
+    };
+    const rotateHandshourright10 =(a) =>{
+        let x;
+        let y;
+        switch (a) {
+            case 0:
+                x = 0;
+                y = 180;
+                break;
+            case 1:
+                x = 270;
+                y = 270;
+                break;
+            case 2:
+                x = 0;
+                y = 180;
+                break;
+            case 3:
+                x = 0;
+                y = 90;
+                break;
+            case 4:
+                x = 0;
+                y = 90;
+                break;
+            case 5:
+                x = 0;
+                y = 90;
+                break;
+            case 6:
+                x = 0;
+                y = 180;
+                break;
+            case 7:
+                x = 45;
+                y = 180;
+                break;
+            case 8:
+                x = 45;
+                y = 180;
+                break;
+            case 9:
+                x = 0;
+                y = 90;
+                break;
+            default:
+                break;
+        }
+        var hourHand = document.getElementById("hourHandright10");
+        var minuteHand = document.getElementById("minuteHandright10");
+        hourHand.style.transform = "rotate(" + x + "deg)";
+        minuteHand.style.transform = "rotate(" + y + "deg)";
+    };
+    const rotateHandshourright11 =(a) =>{
+        let x;
+        let y;
+        switch (a) {
+            case 0:
+                x = 0;
+                y = 180;
+                break;
+            case 1:
+                x = 0;
+                y = 180;
+                break;
+            case 2:
+                x = 90;
+                y = 180;
+                break;
+            case 3:
+                x = 180;
+                y = 270;
+                break;
+            case 4:
+                x = 180;
+                y = 270;
+                break;
+            case 5:
+                x = 180;
+                y = 270;
+                break;
+            case 6:
+                x = 180;
+                y = 180;
+                break;
+            case 7:
+                x = 45;
+                y = 180;
+                break;
+            case 8:
+                x = 180;
+                y = 180;
+                break;
+            case 9:
+                x = 270;
+                y = 180;
+                break;
+            default:
+                break;
+        }
+        var hourHand = document.getElementById("hourHandright11");
+        var minuteHand = document.getElementById("minuteHandright11");
+        hourHand.style.transform = "rotate(" + x + "deg)";
+        minuteHand.style.transform = "rotate(" + y + "deg)";
+    };
+    const rotateHandshourright12 =(a) =>{
+        let x;
+        let y;
+        switch (a) {
+            case 0:
+                x = 0;
+                y = 180;
+                break;
+            case 1:
+                x = 0;
+                y = 180;
+                break;
+            case 2:
+                x = 0;
+                y = 270;
+                break;
+            case 3:
+                x = 0;
+                y = 180;
+                break;
+            case 4:
+                x = 0;
+                y = 180;
+                break;
+            case 5:
+                x = 0;
+                y = 180;
+                break;
+            case 6:
+                x = 0;
+                y = 180;
+                break;
+            case 7:
+                x = 90;
+                y = 90;
+                break;
+            case 8:
+                x = -45;
+                y = 180;
+                break;
+            case 9:
+                x = 0;
+                y = 180;
+                break;
+            default:
+                break;
+        }
+        var hourHand = document.getElementById("hourHandright12");
+        var minuteHand = document.getElementById("minuteHandright12");
+        hourHand.style.transform = "rotate(" + x + "deg)";
+        minuteHand.style.transform = "rotate(" + y + "deg)";
+    };
+    const rotateHandshourright13 =(a) =>{
+        let x;
+        let y;
+        switch (a) {
+            case 0:
+                x = 0;
+                y = 180;
+                break;
+            case 1:
+                x = 270;
+                y = 270;
+                break;
+            case 2:
+                x = 0;
+                y = 180;
+                break;
+            case 3:
+                x = 90;
+                y = 180;
+                break;
+            case 4:
+                x = 270;
+                y = 270;
+                break;
+            case 5:
+                x = 90;
+                y = 180;
+                break;
+            case 6:
+                x = 0;
+                y = 180;
+                break;
+            case 7:
+                x = 0;
+                y = 180;
+                break;
+            case 8:
+                x = 0;
+                y = 180;
+                break;
+            case 9:
+                x = 90;
+                y = 180;
+                break;
+            default:
+                break;
+        }
+        var hourHand = document.getElementById("hourHandright13");
+        var minuteHand = document.getElementById("minuteHandright13");
+        hourHand.style.transform = "rotate(" + x + "deg)";
+        minuteHand.style.transform = "rotate(" + y + "deg)";
+    };
+    const rotateHandshourright14 =(a) =>{
+        let x;
+        let y;
+        switch (a) {
+            case 0:
+                x = 0;
+                y = 0;
+                break;
+            case 1:
+                x = 0;
+                y = 180;
+                break;
+            case 2:
+                x = 0;
+                y = 90;
+                break;
+            case 3:
+                x = 0;
+                y = 270;
+                break;
+            case 4:
+                x = 0;
+                y = 180;
+                break;
+            case 5:
+                x = 0;
+                y = 270;
+                break;
+            case 6:
+                x = 0;
+                y = 0;
+                break;
+            case 7:
+                x = 0;
+                y = 180;
+                break;
+            case 8:
+                x = 0;
+                y = 0;
+                break;
+            case 9:
+                x = 0;
+                y = 270;
+                break;
+            default:
+                break;
+        }
+        var hourHand = document.getElementById("hourHandright14");
+        var minuteHand = document.getElementById("minuteHandright14");
+        hourHand.style.transform = "rotate(" + x + "deg)";
+        minuteHand.style.transform = "rotate(" + y + "deg)";
+    };
+    const rotateHandshourright15 =(a) =>{
+        let x;
+        let y;
+        switch (a) {
+            case 0:
+                x = 0;
+                y = 180;
+                break;
+            case 1:
+                x = 0;
+                y = 180;
+                break;
+            case 2:
+                x = 180;
+                y = 270;
+                break;
+            case 3:
+                x = 0;
+                y = 180;
+                break;
+            case 4:
+                x = 0;
+                y = 180;
+                break;
+            case 5:
+                x = 0;
+                y = 180;
+                break;
+            case 6:
+                x = 0;
+                y = 180;
+                break;
+            case 7:
+                x = 90;
+                y = 90;
+                break;
+            case 8:
+                x = 0;
+                y = 180;
+                break;
+            case 9:
+                x = 0;
+                y = 180;
+                break;
+            default:
+                break;
+        }
+        var hourHand = document.getElementById("hourHandright15");
+        var minuteHand = document.getElementById("minuteHandright15");
+        hourHand.style.transform = "rotate(" + x + "deg)";
+        minuteHand.style.transform = "rotate(" + y + "deg)";
+    };
+    const rotateHandshourright16 =(a) =>{
+        let x;
+        let y;
+        switch (a) {
+            case 0:
+                x = 0;
+                y = 90;
+                break;
+            case 1:
+                x = 270;
+                y = 270;
+                break;
+            case 2:
+                x = 0;
+                y = 90;
+                break;
+            case 3:
+                x = 0;
+                y = 90;
+                break;
+            case 4:
+                x = 270;
+                y = 270;
+                break;
+            case 5:
+                 x = 0;
+                y = 90;
+                break;
+            case 6:
+                 x = 0;
+                y = 90;
+                break;
+            case 7:
+                x = 0;
+                y = 90;
+                break;
+            case 8:
+                x = 0;
+                y = 90;
+                break;
+            case 9:
+                x = 0;
+                y = 90;
+                break;
+            default:
+                break;
+        }
+        var hourHand = document.getElementById("hourHandright16");
+        var minuteHand = document.getElementById("minuteHandright16");
+        hourHand.style.transform = "rotate(" + x + "deg)";
+        minuteHand.style.transform = "rotate(" + y + "deg)";
+    };
+    const rotateHandshourright17 =(a) =>{
+        let x;
+        let y;
+        switch (a) {
+            case 0:
+                x = 90;
+                y = 270;
+                break;
+            case 1:
+                x = 0;
+                y = 90;
+                break;
+            case 2:
+                x = 90;
+                y = 270;
+                break;
+            case 3:
+                x = 90;
+                y = 270;
+                break;
+            case 4:
+                x = 0;
+                y = 90;
+                break;
+            case 5:
+                x = 90;
+                y = 270;
+                break;
+            case 6:
+                x = 90;
+                y = 270;
+                break;
+            case 7:
+               x = 0;
+                y = 270;
+                break;
+            case 8:
+                x = 90;
+                y = 270;;
+                break;
+            case 9:
+               x = 90;
+                y = 270;
+                break;
+            default:
+                break;
+        }
+        var hourHand = document.getElementById("hourHandright17");
+        var minuteHand = document.getElementById("minuteHandright17");
+        hourHand.style.transform = "rotate(" + x + "deg)";
+        minuteHand.style.transform = "rotate(" + y + "deg)";
+    };
+    const rotateHandshourright18 =(a) =>{
+        let x;
+        let y;
+        switch (a) {
+            case 0:
+                x = 0;
+                y = 270;
+                break;
+            case 1:
+                x = 0;
+                y = 270;
+                break;
+            case 2:
+                x = 0;
+                y = 270;
+                break;
+            case 3:
+                x = 0;
+                y = 270;
+                break;
+            case 4:
+                x = 0;
+                y = 270;
+                break;
+            case 5:
+                x = 0;
+                y = 270;
+                break;
+            case 6:
+                x = 0;
+                y = 270;
+                break;
+            case 7:
+                x = 90;
+                y = 90;
+                break;
+            case 8:
+                x = 0;
+                y = 270;
+                break;
+            case 9:
+                x = 0;
+                y = 270;
+                break;
+            default:
+                break;
+        }
+        var hourHand = document.getElementById("hourHandright18");
+        var minuteHand = document.getElementById("minuteHandright18");
+        hourHand.style.transform = "rotate(" + x + "deg)";
+        minuteHand.style.transform = "rotate(" + y + "deg)";
+    };
+    ////hourleft--------------------------------------------------------
+    const rotateHandshourleft1 =(a) =>{
+        let x;
+        let y;
+        switch (a) {
+            case 0:
+                x = 90;
+                y = 180;
+                break;
+            case 1:
+                x = 90;
+                y = 180;
+                break;
+            case 2:
+                x = 90;
+                y = 180;
+                break;
+            case 3:
+                x = 90;
+                y = 180;
+                break;
+            case 4:
+                x = 90;
+                y = 180;
+                break;
+            case 5:
+                x = 90;
+                y = 180;
+                break;
+            case 6:
+                x = 90;
+                y = 180;
+                break;
+            case 7:
+                x = 90;
+                y = 180;
+                break;
+            case 8:
+                x = 90;
+                y = 180;
+                break;
+            case 9:
+                x = 90;
+                y = 180;
+                break;
+            default:
+                break;
+        }
+        var hourHand = document.getElementById("hourHandleft1");
+        var minuteHand = document.getElementById("minuteHandleft1");
+        hourHand.style.transform = "rotate(" + x + "deg)";
+        minuteHand.style.transform = "rotate(" + y + "deg)";
+    };
+    const rotateHandshourleft2 =(a) =>{
+        let x;
+        let y;
+        switch (a) {
+            case 0:
+                x = 90;
+                y = 270;
+                break;
+            case 1:
+                x = 90;
+                y = 270;
+                break;
+            case 2:
+                x = 90;
+                y = 270;
+                break;
+            case 3:
+                x = 90;
+                y = 270;
+                break;
+            case 4:
+                x = 180;
+                y = 270;
+                break;
+            case 5:
+                x = 90;
+                y = 270;
+                break;
+            case 6:
+                x = 90;
+                y = 270;
+                break;
+            case 7:
+                x = 90;
+                y = 270;
+                break;
+            case 8:
+                x = 90;
+                y = 270;
+                break;
+            case 9:
+                x = 90;
+                y = 270;
+                break;
+            default:
+                break;
+        }
+        var hourHand = document.getElementById("hourHandleft2");
+        var minuteHand = document.getElementById("minuteHandleft2");
+        hourHand.style.transform = "rotate(" + x + "deg)";
+        minuteHand.style.transform = "rotate(" + y + "deg)";
+    };
+    const rotateHandshourleft3 =(a) =>{
+        let x;
+        let y;
+        switch (a) {
+            case 0:
+                x = 180;
+                y = 270;
+                break;
+            case 1:
+                x = 180;
+                y = 270;
+                break;
+            case 2:
+                x = 180;
+                y = 270;
+                break;
+            case 3:
+                x = 180;
+                y = 270;
+                break;
+            case 4:
+                x = 180;
+                y = 270;
+                break;
+            case 5:
+                x = 180;
+                y = 270;
+                break;
+            case 6:
+                x = 180;
+                y = 270;
+                break;
+            case 7:
+                x = 180;
+                y = 270;
+                break;
+            case 8:
+                x = 180;
+                y = 270;
+                break;
+            case 9:
+                x = 180;
+                y = 270;
+                break;
+            default:
+                break;
+        }
+        var hourHand = document.getElementById("hourHandleft3");
+        var minuteHand = document.getElementById("minuteHandleft3");
+        hourHand.style.transform = "rotate(" + x + "deg)";
+        minuteHand.style.transform = "rotate(" + y + "deg)";
+    };
+    const rotateHandshourleft4 =(a) =>{
+        let x;
+        let y;
+        switch (a) {
+            case 0:
+                x = 0;
+                y = 180;
+                break;
+            case 1:
+                x = 0;
+                y = 90;
+                break;
+            case 2:
+                x = 0;
+                y = 90;
+                break;
+            case 3:
+                x = 0;
+                y = 90;
+                break;
+            case 4:
+                x = 0;
+                y = 180;
+                break;
+            case 5:
+                x = 0;
+                y = 180;
+                break;
+            case 6:
+                x = 0;
+                y = 180;
+                break;
+            case 7:
+                x = 0;
+                y = 90;
+                break;
+            case 8:
+                x = 0;
+                y = 180;
+                break;
+            case 9:
+                x = 0;
+                y = 180;
+                break;
+            default:
+                break;
+        }
+        var hourHand = document.getElementById("hourHandleft4");
+        var minuteHand = document.getElementById("minuteHandleft4");
+        hourHand.style.transform = "rotate(" + x + "deg)";
+        minuteHand.style.transform = "rotate(" + y + "deg)";
+    };
+    const rotateHandshourleft5 =(a) =>{
+        let x;
+        let y;
+        switch (a) {
+            case 0:
+                x = 180;
+                y = 180;
+                break;
+            case 1:
+                x = 180;
+                y = 270;
+                break;
+            case 2:
+                x = 180;
+                y = 270;
+                break;
+            case 3:
+                x = 180;
+                y = 270;
+                break;
+            case 4:
+                x = 0;
+                y = 180;
+                break;
+            case 5:
+                x = 90;
+                y = 180;
+                break;
+            case 6:
+                x = 90;
+                y = 180;
+                break;
+            case 7:
+                x = 180;
+                y = 270;
+                break;
+            case 8:
+                x = 0;
+                y = 180;
+                break;
+            case 9:
+                x = 0;
+                y = 180;
+                break;
+            default:
+                break;
+        }
+        var hourHand = document.getElementById("hourHandleft5");
+        var minuteHand = document.getElementById("minuteHandleft5");
+        hourHand.style.transform = "rotate(" + x + "deg)";
+        minuteHand.style.transform = "rotate(" + y + "deg)";
+    };
+    const rotateHandshourleft6 =(a) =>{
+        let x;
+        let y;
+        switch (a) {
+            case 0:
+                x = 0;
+                y = 180;
+                break;
+            case 1:
+                x = 0;
+                y = 180;
+                break;
+            case 2:
+                x = 0;
+                y = 180;
+                break;
+            case 3:
+                x = 0;
+                y = 180;
+                break;
+            case 4:
+                x = 0;
+                y = 180;
+                break;
+            case 5:
+                x = 0;
+                y = 270;
+                break;
+            case 6:
+                x = 0;
+                y = 270;
+                break;
+            case 7:
+                x = 0;
+                y = 180;
+                break;
+            case 8:
+                x = 0;
+                y = 180;
+                break;
+            case 9:
+                x = 0;
+                y = 180;
+                break;
+            default:
+                break;
+        }
+        var hourHand = document.getElementById("hourHandleft6");
+        var minuteHand = document.getElementById("minuteHandleft6");
+        hourHand.style.transform = "rotate(" + x + "deg)";
+        minuteHand.style.transform = "rotate(" + y + "deg)";
+    };
+    const rotateHandshourleft7 =(a) =>{
+        let x;
+        let y;
+        switch (a) {
+            case 0:
+                x = 0;
+                y = 180;
+                break;
+            case 1:
+                x = 270;
+                y = 270;
+                break;
+            case 2:
+                x = 90;
+                y = 180;
+                break;
+            case 3:
+                x = 90;
+                y = 180;
+                break;
+            case 4:
+                x = 0;
+                y = 180;
+                break;
+            case 5:
+                x = 0;
+                y = 180;
+                break;
+            case 6:
+                x = 0;
+                y = 180;
+                break;
+            case 7:
+                x = 270;
+                y = 270;
+                break;
+            case 8:
+                x = 0;
+                y = 90+45;
+                break;
+            case 9:
+                x = 0;
+                y = 180;
+                break;
+            default:
+                break;
+        }
+        var hourHand = document.getElementById("hourHandleft7");
+        var minuteHand = document.getElementById("minuteHandleft7");
+        hourHand.style.transform = "rotate(" + x + "deg)";
+        minuteHand.style.transform = "rotate(" + y + "deg)";
+    };
+    const rotateHandshourleft8 =(a) =>{
+        let x;
+        let y;
+        switch (a) {
+            case 0:
+                x = 180;
+                y = 0;
+                break;
+            case 1:
+                x = 180;
+                y = 0;
+                break;
+            case 2:
+                x = 270;
+                y = 0;
+                break;
+            case 3:
+                x = 270;
+                y = 0;
+                break;
+            case 4:
+                x = 0;
+                y = 90;
+                break;
+            case 5:
+                x = 0;
+                y = 90;
+                break;
+            case 6:
+                x = 0;
+                y = 90;
+                break;
+            case 7:
+                x = 0;
+                y = 180 + 45;
+                break;
+            case 8:
+                x = 0;
+                y = 0;
+                break;
+            case 9:
+                x = 0;
+                y = 0;
+                break;
+            default:
+                break;
+        }
+        var hourHand = document.getElementById("hourHandleft8");
+        var minuteHand = document.getElementById("minuteHandleft8");
+        hourHand.style.transform = "rotate(" + x + "deg)";
+        minuteHand.style.transform = "rotate(" + y + "deg)";
+    };
+    const rotateHandshourleft9 =(a) =>{
+        let x;
+        let y;
+        switch (a) {
+            case 0:
+                x = 0;
+                y = 180;
+                break;
+            case 1:
+                x = 0;
+                y = 180;
+                break;
+            case 2:
+                x = 0;
+                y = 180;
+                break;
+            case 3:
+                x = 0;
+                y = 180;
+                break;
+            case 4:
+                x = 0;
+                y = 180;
+                break;
+            case 5:
+                x = 270;
+                y = 180;
+                break;
+            case 6:
+                x = 270;
+                y = 180;
+                break;
+            case 7:
+                x = 0;
+                y = 180 + 45;
+                break;
+            case 8:
+                x = 0;
+                y = 180 + 45;
+                break;
+            case 9:
+                x = 0;
+                y = 180;
+                break;
+            default:
+                break;
+        }
+        var hourHand = document.getElementById("hourHandleft9");
+        var minuteHand = document.getElementById("minuteHandleft9");
+        hourHand.style.transform = "rotate(" + x + "deg)";
+        minuteHand.style.transform = "rotate(" + y + "deg)";
+    };
+    const rotateHandshourleft10 =(a) =>{
+        let x;
+        let y;
+        switch (a) {
+            case 0:
+                x = 0;
+                y = 180;
+                break;
+            case 1:
+                x = 270;
+                y = 270;
+                break;
+            case 2:
+                x = 0;
+                y = 180;
+                break;
+            case 3:
+                x = 0;
+                y = 90;
+                break;
+            case 4:
+                x = 0;
+                y = 90;
+                break;
+            case 5:
+                x = 0;
+                y = 90;
+                break;
+            case 6:
+                x = 0;
+                y = 180;
+                break;
+            case 7:
+                x = 45;
+                y = 180;
+                break;
+            case 8:
+                x = 45;
+                y = 180;
+                break;
+            case 9:
+                x = 0;
+                y = 90;
+                break;
+            default:
+                break;
+        }
+        var hourHand = document.getElementById("hourHandleft10");
+        var minuteHand = document.getElementById("minuteHandleft10");
+        hourHand.style.transform = "rotate(" + x + "deg)";
+        minuteHand.style.transform = "rotate(" + y + "deg)";
+    };
+    const rotateHandshourleft11 =(a) =>{
+        let x;
+        let y;
+        switch (a) {
+            case 0:
+                x = 0;
+                y = 180;
+                break;
+            case 1:
+                x = 0;
+                y = 180;
+                break;
+            case 2:
+                x = 90;
+                y = 180;
+                break;
+            case 3:
+                x = 180;
+                y = 270;
+                break;
+            case 4:
+                x = 180;
+                y = 270;
+                break;
+            case 5:
+                x = 180;
+                y = 270;
+                break;
+            case 6:
+                x = 180;
+                y = 180;
+                break;
+            case 7:
+                x = 45;
+                y = 180;
+                break;
+            case 8:
+                x = 180;
+                y = 180;
+                break;
+            case 9:
+                x = 270;
+                y = 180;
+                break;
+            default:
+                break;
+        }
+        var hourHand = document.getElementById("hourHandleft11");
+        var minuteHand = document.getElementById("minuteHandleft11");
+        hourHand.style.transform = "rotate(" + x + "deg)";
+        minuteHand.style.transform = "rotate(" + y + "deg)";
+    };
+    const rotateHandshourleft12 =(a) =>{
+        let x;
+        let y;
+        switch (a) {
+            case 0:
+                x = 0;
+                y = 180;
+                break;
+            case 1:
+                x = 0;
+                y = 180;
+                break;
+            case 2:
+                x = 0;
+                y = 270;
+                break;
+            case 3:
+                x = 0;
+                y = 180;
+                break;
+            case 4:
+                x = 0;
+                y = 180;
+                break;
+            case 5:
+                x = 0;
+                y = 180;
+                break;
+            case 6:
+                x = 0;
+                y = 180;
+                break;
+            case 7:
+                x = 90;
+                y = 90;
+                break;
+            case 8:
+                x = -45;
+                y = 180;
+                break;
+            case 9:
+                x = 0;
+                y = 180;
+                break;
+            default:
+                break;
+        }
+        var hourHand = document.getElementById("hourHandleft12");
+        var minuteHand = document.getElementById("minuteHandleft12");
+        hourHand.style.transform = "rotate(" + x + "deg)";
+        minuteHand.style.transform = "rotate(" + y + "deg)";
+    };
+    const rotateHandshourleft13 =(a) =>{
+        let x;
+        let y;
+        switch (a) {
+            case 0:
+                x = 0;
+                y = 180;
+                break;
+            case 1:
+                x = 270;
+                y = 270;
+                break;
+            case 2:
+                x = 0;
+                y = 180;
+                break;
+            case 3:
+                x = 90;
+                y = 180;
+                break;
+            case 4:
+                x = 270;
+                y = 270;
+                break;
+            case 5:
+                x = 90;
+                y = 180;
+                break;
+            case 6:
+                x = 0;
+                y = 180;
+                break;
+            case 7:
+                x = 0;
+                y = 180;
+                break;
+            case 8:
+                x = 0;
+                y = 180;
+                break;
+            case 9:
+                x = 90;
+                y = 180;
+                break;
+            default:
+                break;
+        }
+        var hourHand = document.getElementById("hourHandleft13");
+        var minuteHand = document.getElementById("minuteHandleft13");
+        hourHand.style.transform = "rotate(" + x + "deg)";
+        minuteHand.style.transform = "rotate(" + y + "deg)";
+    };
+    const rotateHandshourleft14 =(a) =>{
+        let x;
+        let y;
+        switch (a) {
+            case 0:
+                x = 0;
+                y = 0;
+                break;
+            case 1:
+                x = 0;
+                y = 180;
+                break;
+            case 2:
+                x = 0;
+                y = 90;
+                break;
+            case 3:
+                x = 0;
+                y = 270;
+                break;
+            case 4:
+                x = 0;
+                y = 180;
+                break;
+            case 5:
+                x = 0;
+                y = 270;
+                break;
+            case 6:
+                x = 0;
+                y = 0;
+                break;
+            case 7:
+                x = 0;
+                y = 180;
+                break;
+            case 8:
+                x = 0;
+                y = 0;
+                break;
+            case 9:
+                x = 0;
+                y = 270;
+                break;
+            default:
+                break;
+        }
+        var hourHand = document.getElementById("hourHandleft14");
+        var minuteHand = document.getElementById("minuteHandleft14");
+        hourHand.style.transform = "rotate(" + x + "deg)";
+        minuteHand.style.transform = "rotate(" + y + "deg)";
+    };
+    const rotateHandshourleft15 =(a) =>{
+        let x;
+        let y;
+        switch (a) {
+            case 0:
+                x = 0;
+                y = 180;
+                break;
+            case 1:
+                x = 0;
+                y = 180;
+                break;
+            case 2:
+                x = 180;
+                y = 270;
+                break;
+            case 3:
+                x = 0;
+                y = 180;
+                break;
+            case 4:
+                x = 0;
+                y = 180;
+                break;
+            case 5:
+                x = 0;
+                y = 180;
+                break;
+            case 6:
+                x = 0;
+                y = 180;
+                break;
+            case 7:
+                x = 90;
+                y = 90;
+                break;
+            case 8:
+                x = 0;
+                y = 180;
+                break;
+            case 9:
+                x = 0;
+                y = 180;
+                break;
+            default:
+                break;
+        }
+        var hourHand = document.getElementById("hourHandleft15");
+        var minuteHand = document.getElementById("minuteHandleft15");
+        hourHand.style.transform = "rotate(" + x + "deg)";
+        minuteHand.style.transform = "rotate(" + y + "deg)";
+    };
+    const rotateHandshourleft16 =(a) =>{
+        let x;
+        let y;
+        switch (a) {
+            case 0:
+                x = 0;
+                y = 90;
+                break;
+            case 1:
+                x = 270;
+                y = 270;
+                break;
+            case 2:
+                x = 0;
+                y = 90;
+                break;
+            case 3:
+                x = 0;
+                y = 90;
+                break;
+            case 4:
+                x = 270;
+                y = 270;
+                break;
+            case 5:
+                 x = 0;
+                y = 90;
+                break;
+            case 6:
+                 x = 0;
+                y = 90;
+                break;
+            case 7:
+                x = 0;
+                y = 90;
+                break;
+            case 8:
+                x = 0;
+                y = 90;
+                break;
+            case 9:
+                x = 0;
+                y = 90;
+                break;
+            default:
+                break;
+        }
+        var hourHand = document.getElementById("hourHandleft16");
+        var minuteHand = document.getElementById("minuteHandleft16");
+        hourHand.style.transform = "rotate(" + x + "deg)";
+        minuteHand.style.transform = "rotate(" + y + "deg)";
+    };
+    const rotateHandshourleft17 =(a) =>{
+        let x;
+        let y;
+        switch (a) {
+            case 0:
+                x = 90;
+                y = 270;
+                break;
+            case 1:
+                x = 0;
+                y = 90;
+                break;
+            case 2:
+                x = 90;
+                y = 270;
+                break;
+            case 3:
+                x = 90;
+                y = 270;
+                break;
+            case 4:
+                x = 0;
+                y = 90;
+                break;
+            case 5:
+                x = 90;
+                y = 270;
+                break;
+            case 6:
+                x = 90;
+                y = 270;
+                break;
+            case 7:
+               x = 0;
+                y = 270;
+                break;
+            case 8:
+                x = 90;
+                y = 270;;
+                break;
+            case 9:
+               x = 90;
+                y = 270;
+                break;
+            default:
+                break;
+        }
+        var hourHand = document.getElementById("hourHandleft17");
+        var minuteHand = document.getElementById("minuteHandleft17");
+        hourHand.style.transform = "rotate(" + x + "deg)";
+        minuteHand.style.transform = "rotate(" + y + "deg)";
+    };
+    const rotateHandshourleft18 =(a) =>{
+        let x;
+        let y;
+        switch (a) {
+            case 0:
+                x = 0;
+                y = 270;
+                break;
+            case 1:
+                x = 0;
+                y = 270;
+                break;
+            case 2:
+                x = 0;
+                y = 270;
+                break;
+            case 3:
+                x = 0;
+                y = 270;
+                break;
+            case 4:
+                x = 0;
+                y = 270;
+                break;
+            case 5:
+                x = 0;
+                y = 270;
+                break;
+            case 6:
+                x = 0;
+                y = 270;
+                break;
+            case 7:
+                x = 90;
+                y = 90;
+                break;
+            case 8:
+                x = 0;
+                y = 270;
+                break;
+            case 9:
+                x = 0;
+                y = 270;
+                break;
+            default:
+                break;
+        }
+        var hourHand = document.getElementById("hourHandleft18");
+        var minuteHand = document.getElementById("minuteHandleft18");
+        hourHand.style.transform = "rotate(" + x + "deg)";
+        minuteHand.style.transform = "rotate(" + y + "deg)";
+    };
+    ///minuteright--------------------------------
+    const rotateHandsminuteright1 =(a) =>{
+        let x;
+        let y;
+        switch (a) {
+            case 0:
+                x = 90;
+                y = 180;
+                break;
+            case 1:
+                x = 90;
+                y = 180;
+                break;
+            case 2:
+                x = 90;
+                y = 180;
+                break;
+            case 3:
+                x = 90;
+                y = 180;
+                break;
+            case 4:
+                x = 90;
+                y = 180;
+                break;
+            case 5:
+                x = 90;
+                y = 180;
+                break;
+            case 6:
+                x = 90;
+                y = 180;
+                break;
+            case 7:
+                x = 90;
+                y = 180;
+                break;
+            case 8:
+                x = 90;
+                y = 180;
+                break;
+            case 9:
+                x = 90;
+                y = 180;
+                break;
+            default:
+                break;
+        }
+        var hourHand = document.getElementById("hourHandminuteright1");
+        var minuteHand = document.getElementById("minuteHandminuteright1");
+        hourHand.style.transform = "rotate(" + x + "deg)";
+        minuteHand.style.transform = "rotate(" + y + "deg)";
+    };
+    const rotateHandsminuteright2 =(a) =>{
+        let x;
+        let y;
+        switch (a) {
+            case 0:
+                x = 90;
+                y = 270;
+                break;
+            case 1:
+                x = 90;
+                y = 270;
+                break;
+            case 2:
+                x = 90;
+                y = 270;
+                break;
+            case 3:
+                x = 90;
+                y = 270;
+                break;
+            case 4:
+                x = 180;
+                y = 270;
+                break;
+            case 5:
+                x = 90;
+                y = 270;
+                break;
+            case 6:
+                x = 90;
+                y = 270;
+                break;
+            case 7:
+                x = 90;
+                y = 270;
+                break;
+            case 8:
+                x = 90;
+                y = 270;
+                break;
+            case 9:
+                x = 90;
+                y = 270;
+                break;
+            default:
+                break;
+        }
+        var hourHand = document.getElementById("hourHandminuteright2");
+        var minuteHand = document.getElementById("minuteHandminuteright2");
+        hourHand.style.transform = "rotate(" + x + "deg)";
+        minuteHand.style.transform = "rotate(" + y + "deg)";
+    };
+    const rotateHandsminuteright3 =(a) =>{
+        let x;
+        let y;
+        switch (a) {
+            case 0:
+                x = 180;
+                y = 270;
+                break;
+            case 1:
+                x = 180;
+                y = 270;
+                break;
+            case 2:
+                x = 180;
+                y = 270;
+                break;
+            case 3:
+                x = 180;
+                y = 270;
+                break;
+            case 4:
+                x = 180;
+                y = 270;
+                break;
+            case 5:
+                x = 180;
+                y = 270;
+                break;
+            case 6:
+                x = 180;
+                y = 270;
+                break;
+            case 7:
+                x = 180;
+                y = 270;
+                break;
+            case 8:
+                x = 180;
+                y = 270;
+                break;
+            case 9:
+                x = 180;
+                y = 270;
+                break;
+            default:
+                break;
+        }
+        var hourHand = document.getElementById("hourHandminuteright3");
+        var minuteHand = document.getElementById("minuteHandminuteright3");
+        hourHand.style.transform = "rotate(" + x + "deg)";
+        minuteHand.style.transform = "rotate(" + y + "deg)";
+    };
+    const rotateHandsminuteright4 =(a) =>{
+        let x;
+        let y;
+        switch (a) {
+            case 0:
+                x = 0;
+                y = 180;
+                break;
+            case 1:
+                x = 0;
+                y = 90;
+                break;
+            case 2:
+                x = 0;
+                y = 90;
+                break;
+            case 3:
+                x = 0;
+                y = 90;
+                break;
+            case 4:
+                x = 0;
+                y = 180;
+                break;
+            case 5:
+                x = 0;
+                y = 180;
+                break;
+            case 6:
+                x = 0;
+                y = 180;
+                break;
+            case 7:
+                x = 0;
+                y = 90;
+                break;
+            case 8:
+                x = 0;
+                y = 180;
+                break;
+            case 9:
+                x = 0;
+                y = 180;
+                break;
+            default:
+                break;
+        }
+        var hourHand = document.getElementById("hourHandminuteright4");
+        var minuteHand = document.getElementById("minuteHandminuteright4");
+        hourHand.style.transform = "rotate(" + x + "deg)";
+        minuteHand.style.transform = "rotate(" + y + "deg)";
+    };
+    const rotateHandsminuteright5 =(a) =>{
+        let x;
+        let y;
+        switch (a) {
+            case 0:
+                x = 180;
+                y = 180;
+                break;
+            case 1:
+                x = 180;
+                y = 270;
+                break;
+            case 2:
+                x = 180;
+                y = 270;
+                break;
+            case 3:
+                x = 180;
+                y = 270;
+                break;
+            case 4:
+                x = 0;
+                y = 180;
+                break;
+            case 5:
+                x = 90;
+                y = 180;
+                break;
+            case 6:
+                x = 90;
+                y = 180;
+                break;
+            case 7:
+                x = 180;
+                y = 270;
+                break;
+            case 8:
+                x = 0;
+                y = 180;
+                break;
+            case 9:
+                x = 0;
+                y = 180;
+                break;
+            default:
+                break;
+        }
+        var hourHand = document.getElementById("hourHandminuteright5");
+        var minuteHand = document.getElementById("minuteHandminuteright5");
+        hourHand.style.transform = "rotate(" + x + "deg)";
+        minuteHand.style.transform = "rotate(" + y + "deg)";
+    };
+    const rotateHandsminuteright6 =(a) =>{
+        let x;
+        let y;
+        switch (a) {
+            case 0:
+                x = 0;
+                y = 180;
+                break;
+            case 1:
+                x = 0;
+                y = 180;
+                break;
+            case 2:
+                x = 0;
+                y = 180;
+                break;
+            case 3:
+                x = 0;
+                y = 180;
+                break;
+            case 4:
+                x = 0;
+                y = 180;
+                break;
+            case 5:
+                x = 0;
+                y = 270;
+                break;
+            case 6:
+                x = 0;
+                y = 270;
+                break;
+            case 7:
+                x = 0;
+                y = 180;
+                break;
+            case 8:
+                x = 0;
+                y = 180;
+                break;
+            case 9:
+                x = 0;
+                y = 180;
+                break;
+            default:
+                break;
+        }
+        var hourHand = document.getElementById("hourHandminuteright6");
+        var minuteHand = document.getElementById("minuteHandminuteright6");
+        hourHand.style.transform = "rotate(" + x + "deg)";
+        minuteHand.style.transform = "rotate(" + y + "deg)";
+    };
+    const rotateHandsminuteright7 =(a) =>{
+        let x;
+        let y;
+        switch (a) {
+            case 0:
+                x = 0;
+                y = 180;
+                break;
+            case 1:
+                x = 270;
+                y = 270;
+                break;
+            case 2:
+                x = 90;
+                y = 180;
+                break;
+            case 3:
+                x = 90;
+                y = 180;
+                break;
+            case 4:
+                x = 0;
+                y = 180;
+                break;
+            case 5:
+                x = 0;
+                y = 180;
+                break;
+            case 6:
+                x = 0;
+                y = 180;
+                break;
+            case 7:
+                x = 270;
+                y = 270;
+                break;
+            case 8:
+                x = 0;
+                y = 90+45;
+                break;
+            case 9:
+                x = 0;
+                y = 180;
+                break;
+            default:
+                break;
+        }
+        var hourHand = document.getElementById("hourHandminuteright7");
+        var minuteHand = document.getElementById("minuteHandminuteright7");
+        hourHand.style.transform = "rotate(" + x + "deg)";
+        minuteHand.style.transform = "rotate(" + y + "deg)";
+    };
+    const rotateHandsminuteright8 =(a) =>{
+        let x;
+        let y;
+        switch (a) {
+            case 0:
+                x = 180;
+                y = 0;
+                break;
+            case 1:
+                x = 180;
+                y = 0;
+                break;
+            case 2:
+                x = 270;
+                y = 0;
+                break;
+            case 3:
+                x = 270;
+                y = 0;
+                break;
+            case 4:
+                x = 0;
+                y = 90;
+                break;
+            case 5:
+                x = 0;
+                y = 90;
+                break;
+            case 6:
+                x = 0;
+                y = 90;
+                break;
+            case 7:
+                x = 0;
+                y = 180 + 45;
+                break;
+            case 8:
+                x = 0;
+                y = 0;
+                break;
+            case 9:
+                x = 0;
+                y = 0;
+                break;
+            default:
+                break;
+        }
+        var hourHand = document.getElementById("hourHandminuteright8");
+        var minuteHand = document.getElementById("minuteHandminuteright8");
+        hourHand.style.transform = "rotate(" + x + "deg)";
+        minuteHand.style.transform = "rotate(" + y + "deg)";
+    };
+    const rotateHandsminuteright9 =(a) =>{
+        let x;
+        let y;
+        switch (a) {
+            case 0:
+                x = 0;
+                y = 180;
+                break;
+            case 1:
+                x = 0;
+                y = 180;
+                break;
+            case 2:
+                x = 0;
+                y = 180;
+                break;
+            case 3:
+                x = 0;
+                y = 180;
+                break;
+            case 4:
+                x = 0;
+                y = 180;
+                break;
+            case 5:
+                x = 270;
+                y = 180;
+                break;
+            case 6:
+                x = 270;
+                y = 180;
+                break;
+            case 7:
+                x = 0;
+                y = 180 + 45;
+                break;
+            case 8:
+                x = 0;
+                y = 180 + 45;
+                break;
+            case 9:
+                x = 0;
+                y = 180;
+                break;
+            default:
+                break;
+        }
+        var hourHand = document.getElementById("hourHandminuteright9");
+        var minuteHand = document.getElementById("minuteHandminuteright9");
+        hourHand.style.transform = "rotate(" + x + "deg)";
+        minuteHand.style.transform = "rotate(" + y + "deg)";
+    };
+    const rotateHandsminuteright10 =(a) =>{
+        let x;
+        let y;
+        switch (a) {
+            case 0:
+                x = 0;
+                y = 180;
+                break;
+            case 1:
+                x = 270;
+                y = 270;
+                break;
+            case 2:
+                x = 0;
+                y = 180;
+                break;
+            case 3:
+                x = 0;
+                y = 90;
+                break;
+            case 4:
+                x = 0;
+                y = 90;
+                break;
+            case 5:
+                x = 0;
+                y = 90;
+                break;
+            case 6:
+                x = 0;
+                y = 180;
+                break;
+            case 7:
+                x = 45;
+                y = 180;
+                break;
+            case 8:
+                x = 45;
+                y = 180;
+                break;
+            case 9:
+                x = 0;
+                y = 90;
+                break;
+            default:
+                break;
+        }
+        var hourHand = document.getElementById("hourHandminuteright10");
+        var minuteHand = document.getElementById("minuteHandminuteright10");
+        hourHand.style.transform = "rotate(" + x + "deg)";
+        minuteHand.style.transform = "rotate(" + y + "deg)";
+    };
+    const rotateHandsminuteright11 =(a) =>{
+        let x;
+        let y;
+        switch (a) {
+            case 0:
+                x = 0;
+                y = 180;
+                break;
+            case 1:
+                x = 0;
+                y = 180;
+                break;
+            case 2:
+                x = 90;
+                y = 180;
+                break;
+            case 3:
+                x = 180;
+                y = 270;
+                break;
+            case 4:
+                x = 180;
+                y = 270;
+                break;
+            case 5:
+                x = 180;
+                y = 270;
+                break;
+            case 6:
+                x = 180;
+                y = 180;
+                break;
+            case 7:
+                x = 45;
+                y = 180;
+                break;
+            case 8:
+                x = 180;
+                y = 180;
+                break;
+            case 9:
+                x = 270;
+                y = 180;
+                break;
+            default:
+                break;
+        }
+        var hourHand = document.getElementById("hourHandminuteright11");
+        var minuteHand = document.getElementById("minuteHandminuteright11");
+        hourHand.style.transform = "rotate(" + x + "deg)";
+        minuteHand.style.transform = "rotate(" + y + "deg)";
+    };
+    const rotateHandsminuteright12 =(a) =>{
+        let x;
+        let y;
+        switch (a) {
+            case 0:
+                x = 0;
+                y = 180;
+                break;
+            case 1:
+                x = 0;
+                y = 180;
+                break;
+            case 2:
+                x = 0;
+                y = 270;
+                break;
+            case 3:
+                x = 0;
+                y = 180;
+                break;
+            case 4:
+                x = 0;
+                y = 180;
+                break;
+            case 5:
+                x = 0;
+                y = 180;
+                break;
+            case 6:
+                x = 0;
+                y = 180;
+                break;
+            case 7:
+                x = 90;
+                y = 90;
+                break;
+            case 8:
+                x = -45;
+                y = 180;
+                break;
+            case 9:
+                x = 0;
+                y = 180;
+                break;
+            default:
+                break;
+        }
+        var hourHand = document.getElementById("hourHandminuteright12");
+        var minuteHand = document.getElementById("minuteHandminuteright12");
+        hourHand.style.transform = "rotate(" + x + "deg)";
+        minuteHand.style.transform = "rotate(" + y + "deg)";
+    };
+    const rotateHandsminuteright13 =(a) =>{
+        let x;
+        let y;
+        switch (a) {
+            case 0:
+                x = 0;
+                y = 180;
+                break;
+            case 1:
+                x = 270;
+                y = 270;
+                break;
+            case 2:
+                x = 0;
+                y = 180;
+                break;
+            case 3:
+                x = 90;
+                y = 180;
+                break;
+            case 4:
+                x = 270;
+                y = 270;
+                break;
+            case 5:
+                x = 90;
+                y = 180;
+                break;
+            case 6:
+                x = 0;
+                y = 180;
+                break;
+            case 7:
+                x = 0;
+                y = 180;
+                break;
+            case 8:
+                x = 0;
+                y = 180;
+                break;
+            case 9:
+                x = 90;
+                y = 180;
+                break;
+            default:
+                break;
+        }
+        var hourHand = document.getElementById("hourHandminuteright13");
+        var minuteHand = document.getElementById("minuteHandminuteright13");
+        hourHand.style.transform = "rotate(" + x + "deg)";
+        minuteHand.style.transform = "rotate(" + y + "deg)";
+    };
+    const rotateHandsminuteright14 =(a) =>{
+        let x;
+        let y;
+        switch (a) {
+            case 0:
+                x = 0;
+                y = 0;
+                break;
+            case 1:
+                x = 0;
+                y = 180;
+                break;
+            case 2:
+                x = 0;
+                y = 90;
+                break;
+            case 3:
+                x = 0;
+                y = 270;
+                break;
+            case 4:
+                x = 0;
+                y = 180;
+                break;
+            case 5:
+                x = 0;
+                y = 270;
+                break;
+            case 6:
+                x = 0;
+                y = 0;
+                break;
+            case 7:
+                x = 0;
+                y = 180;
+                break;
+            case 8:
+                x = 0;
+                y = 0;
+                break;
+            case 9:
+                x = 0;
+                y = 270;
+                break;
+            default:
+                break;
+        }
+        var hourHand = document.getElementById("hourHandminuteright14");
+        var minuteHand = document.getElementById("minuteHandminuteright14");
+        hourHand.style.transform = "rotate(" + x + "deg)";
+        minuteHand.style.transform = "rotate(" + y + "deg)";
+    };
+    const rotateHandsminuteright15 =(a) =>{
+        let x;
+        let y;
+        switch (a) {
+            case 0:
+                x = 0;
+                y = 180;
+                break;
+            case 1:
+                x = 0;
+                y = 180;
+                break;
+            case 2:
+                x = 180;
+                y = 270;
+                break;
+            case 3:
+                x = 0;
+                y = 180;
+                break;
+            case 4:
+                x = 0;
+                y = 180;
+                break;
+            case 5:
+                x = 0;
+                y = 180;
+                break;
+            case 6:
+                x = 0;
+                y = 180;
+                break;
+            case 7:
+                x = 90;
+                y = 90;
+                break;
+            case 8:
+                x = 0;
+                y = 180;
+                break;
+            case 9:
+                x = 0;
+                y = 180;
+                break;
+            default:
+                break;
+        }
+        var hourHand = document.getElementById("hourHandminuteright15");
+        var minuteHand = document.getElementById("minuteHandminuteright15");
+        hourHand.style.transform = "rotate(" + x + "deg)";
+        minuteHand.style.transform = "rotate(" + y + "deg)";
+    };
+    const rotateHandsminuteright16 =(a) =>{
+        let x;
+        let y;
+        switch (a) {
+            case 0:
+                x = 0;
+                y = 90;
+                break;
+            case 1:
+                x = 270;
+                y = 270;
+                break;
+            case 2:
+                x = 0;
+                y = 90;
+                break;
+            case 3:
+                x = 0;
+                y = 90;
+                break;
+            case 4:
+                x = 270;
+                y = 270;
+                break;
+            case 5:
+                 x = 0;
+                y = 90;
+                break;
+            case 6:
+                 x = 0;
+                y = 90;
+                break;
+            case 7:
+                x = 0;
+                y = 90;
+                break;
+            case 8:
+                x = 0;
+                y = 90;
+                break;
+            case 9:
+                x = 0;
+                y = 90;
+                break;
+            default:
+                break;
+        }
+        var hourHand = document.getElementById("hourHandminuteright16");
+        var minuteHand = document.getElementById("minuteHandminuteright16");
+        hourHand.style.transform = "rotate(" + x + "deg)";
+        minuteHand.style.transform = "rotate(" + y + "deg)";
+    };
+    const rotateHandsminuteright17 =(a) =>{
+        let x;
+        let y;
+        switch (a) {
+            case 0:
+                x = 90;
+                y = 270;
+                break;
+            case 1:
+                x = 0;
+                y = 90;
+                break;
+            case 2:
+                x = 90;
+                y = 270;
+                break;
+            case 3:
+                x = 90;
+                y = 270;
+                break;
+            case 4:
+                x = 0;
+                y = 90;
+                break;
+            case 5:
+                x = 90;
+                y = 270;
+                break;
+            case 6:
+                x = 90;
+                y = 270;
+                break;
+            case 7:
+               x = 0;
+                y = 270;
+                break;
+            case 8:
+                x = 90;
+                y = 270;;
+                break;
+            case 9:
+               x = 90;
+                y = 270;
+                break;
+            default:
+                break;
+        }
+        var hourHand = document.getElementById("hourHandminuteright17");
+        var minuteHand = document.getElementById("minuteHandminuteright17");
+        hourHand.style.transform = "rotate(" + x + "deg)";
+        minuteHand.style.transform = "rotate(" + y + "deg)";
+    };
+    const rotateHandsminuteright18 =(a) =>{
+        let x;
+        let y;
+        switch (a) {
+            case 0:
+                x = 0;
+                y = 270;
+                break;
+            case 1:
+                x = 0;
+                y = 270;
+                break;
+            case 2:
+                x = 0;
+                y = 270;
+                break;
+            case 3:
+                x = 0;
+                y = 270;
+                break;
+            case 4:
+                x = 0;
+                y = 270;
+                break;
+            case 5:
+                x = 0;
+                y = 270;
+                break;
+            case 6:
+                x = 0;
+                y = 270;
+                break;
+            case 7:
+                x = 90;
+                y = 90;
+                break;
+            case 8:
+                x = 0;
+                y = 270;
+                break;
+            case 9:
+                x = 0;
+                y = 270;
+                break;
+            default:
+                break;
+        }
+        var hourHand = document.getElementById("hourHandminuteright18");
+        var minuteHand = document.getElementById("minuteHandminuteright18");
+        hourHand.style.transform = "rotate(" + x + "deg)";
+        minuteHand.style.transform = "rotate(" + y + "deg)";
+    };
+    ///minuteright--------------------------------
+    const rotateHandsminuteleft1 =(a) =>{
+        let x;
+        let y;
+        switch (a) {
+            case 0:
+                x = 90;
+                y = 180;
+                break;
+            case 1:
+                x = 90;
+                y = 180;
+                break;
+            case 2:
+                x = 90;
+                y = 180;
+                break;
+            case 3:
+                x = 90;
+                y = 180;
+                break;
+            case 4:
+                x = 90;
+                y = 180;
+                break;
+            case 5:
+                x = 90;
+                y = 180;
+                break;
+            case 6:
+                x = 90;
+                y = 180;
+                break;
+            case 7:
+                x = 90;
+                y = 180;
+                break;
+            case 8:
+                x = 90;
+                y = 180;
+                break;
+            case 9:
+                x = 90;
+                y = 180;
+                break;
+            default:
+                break;
+        }
+        var hourHand = document.getElementById("hourHandminuteleft1");
+        var minuteHand = document.getElementById("minuteHandminuteleft1");
+        hourHand.style.transform = "rotate(" + x + "deg)";
+        minuteHand.style.transform = "rotate(" + y + "deg)";
+    };
+    const rotateHandsminuteleft2 =(a) =>{
+        let x;
+        let y;
+        switch (a) {
+            case 0:
+                x = 90;
+                y = 270;
+                break;
+            case 1:
+                x = 90;
+                y = 270;
+                break;
+            case 2:
+                x = 90;
+                y = 270;
+                break;
+            case 3:
+                x = 90;
+                y = 270;
+                break;
+            case 4:
+                x = 180;
+                y = 270;
+                break;
+            case 5:
+                x = 90;
+                y = 270;
+                break;
+            case 6:
+                x = 90;
+                y = 270;
+                break;
+            case 7:
+                x = 90;
+                y = 270;
+                break;
+            case 8:
+                x = 90;
+                y = 270;
+                break;
+            case 9:
+                x = 90;
+                y = 270;
+                break;
+            default:
+                break;
+        }
+        var hourHand = document.getElementById("hourHandminuteleft2");
+        var minuteHand = document.getElementById("minuteHandminuteleft2");
+        hourHand.style.transform = "rotate(" + x + "deg)";
+        minuteHand.style.transform = "rotate(" + y + "deg)";
+    };
+    const rotateHandsminuteleft3 =(a) =>{
+        let x;
+        let y;
+        switch (a) {
+            case 0:
+                x = 180;
+                y = 270;
+                break;
+            case 1:
+                x = 180;
+                y = 270;
+                break;
+            case 2:
+                x = 180;
+                y = 270;
+                break;
+            case 3:
+                x = 180;
+                y = 270;
+                break;
+            case 4:
+                x = 180;
+                y = 270;
+                break;
+            case 5:
+                x = 180;
+                y = 270;
+                break;
+            case 6:
+                x = 180;
+                y = 270;
+                break;
+            case 7:
+                x = 180;
+                y = 270;
+                break;
+            case 8:
+                x = 180;
+                y = 270;
+                break;
+            case 9:
+                x = 180;
+                y = 270;
+                break;
+            default:
+                break;
+        }
+        var hourHand = document.getElementById("hourHandminuteleft3");
+        var minuteHand = document.getElementById("minuteHandminuteleft3");
+        hourHand.style.transform = "rotate(" + x + "deg)";
+        minuteHand.style.transform = "rotate(" + y + "deg)";
+    };
+    const rotateHandsminuteleft4 =(a) =>{
+        let x;
+        let y;
+        switch (a) {
+            case 0:
+                x = 0;
+                y = 180;
+                break;
+            case 1:
+                x = 0;
+                y = 90;
+                break;
+            case 2:
+                x = 0;
+                y = 90;
+                break;
+            case 3:
+                x = 0;
+                y = 90;
+                break;
+            case 4:
+                x = 0;
+                y = 180;
+                break;
+            case 5:
+                x = 0;
+                y = 180;
+                break;
+            case 6:
+                x = 0;
+                y = 180;
+                break;
+            case 7:
+                x = 0;
+                y = 90;
+                break;
+            case 8:
+                x = 0;
+                y = 180;
+                break;
+            case 9:
+                x = 0;
+                y = 180;
+                break;
+            default:
+                break;
+        }
+        var hourHand = document.getElementById("hourHandminuteleft4");
+        var minuteHand = document.getElementById("minuteHandminuteleft4");
+        hourHand.style.transform = "rotate(" + x + "deg)";
+        minuteHand.style.transform = "rotate(" + y + "deg)";
+    };
+    const rotateHandsminuteleft5 =(a) =>{
+        let x;
+        let y;
+        switch (a) {
+            case 0:
+                x = 180;
+                y = 180;
+                break;
+            case 1:
+                x = 180;
+                y = 270;
+                break;
+            case 2:
+                x = 180;
+                y = 270;
+                break;
+            case 3:
+                x = 180;
+                y = 270;
+                break;
+            case 4:
+                x = 0;
+                y = 180;
+                break;
+            case 5:
+                x = 90;
+                y = 180;
+                break;
+            case 6:
+                x = 90;
+                y = 180;
+                break;
+            case 7:
+                x = 180;
+                y = 270;
+                break;
+            case 8:
+                x = 0;
+                y = 180;
+                break;
+            case 9:
+                x = 0;
+                y = 180;
+                break;
+            default:
+                break;
+        }
+        var hourHand = document.getElementById("hourHandminuteleft5");
+        var minuteHand = document.getElementById("minuteHandminuteleft5");
+        hourHand.style.transform = "rotate(" + x + "deg)";
+        minuteHand.style.transform = "rotate(" + y + "deg)";
+    };
+    const rotateHandsminuteleft6 =(a) =>{
+        let x;
+        let y;
+        switch (a) {
+            case 0:
+                x = 0;
+                y = 180;
+                break;
+            case 1:
+                x = 0;
+                y = 180;
+                break;
+            case 2:
+                x = 0;
+                y = 180;
+                break;
+            case 3:
+                x = 0;
+                y = 180;
+                break;
+            case 4:
+                x = 0;
+                y = 180;
+                break;
+            case 5:
+                x = 0;
+                y = 270;
+                break;
+            case 6:
+                x = 0;
+                y = 270;
+                break;
+            case 7:
+                x = 0;
+                y = 180;
+                break;
+            case 8:
+                x = 0;
+                y = 180;
+                break;
+            case 9:
+                x = 0;
+                y = 180;
+                break;
+            default:
+                break;
+        }
+        var hourHand = document.getElementById("hourHandminuteleft6");
+        var minuteHand = document.getElementById("minuteHandminuteleft6");
+        hourHand.style.transform = "rotate(" + x + "deg)";
+        minuteHand.style.transform = "rotate(" + y + "deg)";
+    };
+    const rotateHandsminuteleft7 =(a) =>{
+        let x;
+        let y;
+        switch (a) {
+            case 0:
+                x = 0;
+                y = 180;
+                break;
+            case 1:
+                x = 270;
+                y = 270;
+                break;
+            case 2:
+                x = 90;
+                y = 180;
+                break;
+            case 3:
+                x = 90;
+                y = 180;
+                break;
+            case 4:
+                x = 0;
+                y = 180;
+                break;
+            case 5:
+                x = 0;
+                y = 180;
+                break;
+            case 6:
+                x = 0;
+                y = 180;
+                break;
+            case 7:
+                x = 270;
+                y = 270;
+                break;
+            case 8:
+                x = 0;
+                y = 90+45;
+                break;
+            case 9:
+                x = 0;
+                y = 180;
+                break;
+            default:
+                break;
+        }
+        var hourHand = document.getElementById("hourHandminuteleft7");
+        var minuteHand = document.getElementById("minuteHandminuteleft7");
+        hourHand.style.transform = "rotate(" + x + "deg)";
+        minuteHand.style.transform = "rotate(" + y + "deg)";
+    };
+    const rotateHandsminuteleft8 =(a) =>{
+        let x;
+        let y;
+        switch (a) {
+            case 0:
+                x = 180;
+                y = 0;
+                break;
+            case 1:
+                x = 180;
+                y = 0;
+                break;
+            case 2:
+                x = 270;
+                y = 0;
+                break;
+            case 3:
+                x = 270;
+                y = 0;
+                break;
+            case 4:
+                x = 0;
+                y = 90;
+                break;
+            case 5:
+                x = 0;
+                y = 90;
+                break;
+            case 6:
+                x = 0;
+                y = 90;
+                break;
+            case 7:
+                x = 0;
+                y = 180 + 45;
+                break;
+            case 8:
+                x = 0;
+                y = 0;
+                break;
+            case 9:
+                x = 0;
+                y = 0;
+                break;
+            default:
+                break;
+        }
+        var hourHand = document.getElementById("hourHandminuteleft8");
+        var minuteHand = document.getElementById("minuteHandminuteleft8");
+        hourHand.style.transform = "rotate(" + x + "deg)";
+        minuteHand.style.transform = "rotate(" + y + "deg)";
+    };
+    const rotateHandsminuteleft9 =(a) =>{
+        let x;
+        let y;
+        switch (a) {
+            case 0:
+                x = 0;
+                y = 180;
+                break;
+            case 1:
+                x = 0;
+                y = 180;
+                break;
+            case 2:
+                x = 0;
+                y = 180;
+                break;
+            case 3:
+                x = 0;
+                y = 180;
+                break;
+            case 4:
+                x = 0;
+                y = 180;
+                break;
+            case 5:
+                x = 270;
+                y = 180;
+                break;
+            case 6:
+                x = 270;
+                y = 180;
+                break;
+            case 7:
+                x = 0;
+                y = 180 + 45;
+                break;
+            case 8:
+                x = 0;
+                y = 180 + 45;
+                break;
+            case 9:
+                x = 0;
+                y = 180;
+                break;
+            default:
+                break;
+        }
+        var hourHand = document.getElementById("hourHandminuteleft9");
+        var minuteHand = document.getElementById("minuteHandminuteleft9");
+        hourHand.style.transform = "rotate(" + x + "deg)";
+        minuteHand.style.transform = "rotate(" + y + "deg)";
+    };
+    const rotateHandsminuteleft10 =(a) =>{
+        let x;
+        let y;
+        switch (a) {
+            case 0:
+                x = 0;
+                y = 180;
+                break;
+            case 1:
+                x = 270;
+                y = 270;
+                break;
+            case 2:
+                x = 0;
+                y = 180;
+                break;
+            case 3:
+                x = 0;
+                y = 90;
+                break;
+            case 4:
+                x = 0;
+                y = 90;
+                break;
+            case 5:
+                x = 0;
+                y = 90;
+                break;
+            case 6:
+                x = 0;
+                y = 180;
+                break;
+            case 7:
+                x = 45;
+                y = 180;
+                break;
+            case 8:
+                x = 45;
+                y = 180;
+                break;
+            case 9:
+                x = 0;
+                y = 90;
+                break;
+            default:
+                break;
+        }
+        var hourHand = document.getElementById("hourHandminuteleft10");
+        var minuteHand = document.getElementById("minuteHandminuteleft10");
+        hourHand.style.transform = "rotate(" + x + "deg)";
+        minuteHand.style.transform = "rotate(" + y + "deg)";
+    };
+    const rotateHandsminuteleft11 =(a) =>{
+        let x;
+        let y;
+        switch (a) {
+            case 0:
+                x = 0;
+                y = 180;
+                break;
+            case 1:
+                x = 0;
+                y = 180;
+                break;
+            case 2:
+                x = 90;
+                y = 180;
+                break;
+            case 3:
+                x = 180;
+                y = 270;
+                break;
+            case 4:
+                x = 180;
+                y = 270;
+                break;
+            case 5:
+                x = 180;
+                y = 270;
+                break;
+            case 6:
+                x = 180;
+                y = 180;
+                break;
+            case 7:
+                x = 45;
+                y = 180;
+                break;
+            case 8:
+                x = 180;
+                y = 180;
+                break;
+            case 9:
+                x = 270;
+                y = 180;
+                break;
+            default:
+                break;
+        }
+        var hourHand = document.getElementById("hourHandminuteleft11");
+        var minuteHand = document.getElementById("minuteHandminuteleft11");
+        hourHand.style.transform = "rotate(" + x + "deg)";
+        minuteHand.style.transform = "rotate(" + y + "deg)";
+    };
+    const rotateHandsminuteleft12 =(a) =>{
+        let x;
+        let y;
+        switch (a) {
+            case 0:
+                x = 0;
+                y = 180;
+                break;
+            case 1:
+                x = 0;
+                y = 180;
+                break;
+            case 2:
+                x = 0;
+                y = 270;
+                break;
+            case 3:
+                x = 0;
+                y = 180;
+                break;
+            case 4:
+                x = 0;
+                y = 180;
+                break;
+            case 5:
+                x = 0;
+                y = 180;
+                break;
+            case 6:
+                x = 0;
+                y = 180;
+                break;
+            case 7:
+                x = 90;
+                y = 90;
+                break;
+            case 8:
+                x = -45;
+                y = 180;
+                break;
+            case 9:
+                x = 0;
+                y = 180;
+                break;
+            default:
+                break;
+        }
+        var hourHand = document.getElementById("hourHandminuteleft12");
+        var minuteHand = document.getElementById("minuteHandminuteleft12");
+        hourHand.style.transform = "rotate(" + x + "deg)";
+        minuteHand.style.transform = "rotate(" + y + "deg)";
+    };
+    const rotateHandsminuteleft13 =(a) =>{
+        let x;
+        let y;
+        switch (a) {
+            case 0:
+                x = 0;
+                y = 180;
+                break;
+            case 1:
+                x = 270;
+                y = 270;
+                break;
+            case 2:
+                x = 0;
+                y = 180;
+                break;
+            case 3:
+                x = 90;
+                y = 180;
+                break;
+            case 4:
+                x = 270;
+                y = 270;
+                break;
+            case 5:
+                x = 90;
+                y = 180;
+                break;
+            case 6:
+                x = 0;
+                y = 180;
+                break;
+            case 7:
+                x = 0;
+                y = 180;
+                break;
+            case 8:
+                x = 0;
+                y = 180;
+                break;
+            case 9:
+                x = 90;
+                y = 180;
+                break;
+            default:
+                break;
+        }
+        var hourHand = document.getElementById("hourHandminuteleft13");
+        var minuteHand = document.getElementById("minuteHandminuteleft13");
+        hourHand.style.transform = "rotate(" + x + "deg)";
+        minuteHand.style.transform = "rotate(" + y + "deg)";
+    };
+    const rotateHandsminuteleft14 =(a) =>{
+        let x;
+        let y;
+        switch (a) {
+            case 0:
+                x = 0;
+                y = 0;
+                break;
+            case 1:
+                x = 0;
+                y = 180;
+                break;
+            case 2:
+                x = 0;
+                y = 90;
+                break;
+            case 3:
+                x = 0;
+                y = 270;
+                break;
+            case 4:
+                x = 0;
+                y = 180;
+                break;
+            case 5:
+                x = 0;
+                y = 270;
+                break;
+            case 6:
+                x = 0;
+                y = 0;
+                break;
+            case 7:
+                x = 0;
+                y = 180;
+                break;
+            case 8:
+                x = 0;
+                y = 0;
+                break;
+            case 9:
+                x = 0;
+                y = 270;
+                break;
+            default:
+                break;
+        }
+        var hourHand = document.getElementById("hourHandminuteleft14");
+        var minuteHand = document.getElementById("minuteHandminuteleft14");
+        hourHand.style.transform = "rotate(" + x + "deg)";
+        minuteHand.style.transform = "rotate(" + y + "deg)";
+    };
+    const rotateHandsminuteleft15 =(a) =>{
+        let x;
+        let y;
+        switch (a) {
+            case 0:
+                x = 0;
+                y = 180;
+                break;
+            case 1:
+                x = 0;
+                y = 180;
+                break;
+            case 2:
+                x = 180;
+                y = 270;
+                break;
+            case 3:
+                x = 0;
+                y = 180;
+                break;
+            case 4:
+                x = 0;
+                y = 180;
+                break;
+            case 5:
+                x = 0;
+                y = 180;
+                break;
+            case 6:
+                x = 0;
+                y = 180;
+                break;
+            case 7:
+                x = 90;
+                y = 90;
+                break;
+            case 8:
+                x = 0;
+                y = 180;
+                break;
+            case 9:
+                x = 0;
+                y = 180;
+                break;
+            default:
+                break;
+        }
+        var hourHand = document.getElementById("hourHandminuteleft15");
+        var minuteHand = document.getElementById("minuteHandminuteleft15");
+        hourHand.style.transform = "rotate(" + x + "deg)";
+        minuteHand.style.transform = "rotate(" + y + "deg)";
+    };
+    const rotateHandsminuteleft16 =(a) =>{
+        let x;
+        let y;
+        switch (a) {
+            case 0:
+                x = 0;
+                y = 90;
+                break;
+            case 1:
+                x = 270;
+                y = 270;
+                break;
+            case 2:
+                x = 0;
+                y = 90;
+                break;
+            case 3:
+                x = 0;
+                y = 90;
+                break;
+            case 4:
+                x = 270;
+                y = 270;
+                break;
+            case 5:
+                 x = 0;
+                y = 90;
+                break;
+            case 6:
+                 x = 0;
+                y = 90;
+                break;
+            case 7:
+                x = 0;
+                y = 90;
+                break;
+            case 8:
+                x = 0;
+                y = 90;
+                break;
+            case 9:
+                x = 0;
+                y = 90;
+                break;
+            default:
+                break;
+        }
+        var hourHand = document.getElementById("hourHandminuteleft16");
+        var minuteHand = document.getElementById("minuteHandminuteleft16");
+        hourHand.style.transform = "rotate(" + x + "deg)";
+        minuteHand.style.transform = "rotate(" + y + "deg)";
+    };
+    const rotateHandsminuteleft17 =(a) =>{
+        let x;
+        let y;
+        switch (a) {
+            case 0:
+                x = 90;
+                y = 270;
+                break;
+            case 1:
+                x = 0;
+                y = 90;
+                break;
+            case 2:
+                x = 90;
+                y = 270;
+                break;
+            case 3:
+                x = 90;
+                y = 270;
+                break;
+            case 4:
+                x = 0;
+                y = 90;
+                break;
+            case 5:
+                x = 90;
+                y = 270;
+                break;
+            case 6:
+                x = 90;
+                y = 270;
+                break;
+            case 7:
+               x = 0;
+                y = 270;
+                break;
+            case 8:
+                x = 90;
+                y = 270;;
+                break;
+            case 9:
+               x = 90;
+                y = 270;
+                break;
+            default:
+                break;
+        }
+        var hourHand = document.getElementById("hourHandminuteleft17");
+        var minuteHand = document.getElementById("minuteHandminuteleft17");
+        hourHand.style.transform = "rotate(" + x + "deg)";
+        minuteHand.style.transform = "rotate(" + y + "deg)";
+    };
+    const rotateHandsminuteleft18 =(a) =>{
+        let x;
+        let y;
+        switch (a) {
+            case 0:
+                x = 0;
+                y = 270;
+                break;
+            case 1:
+                x = 0;
+                y = 270;
+                break;
+            case 2:
+                x = 0;
+                y = 270;
+                break;
+            case 3:
+                x = 0;
+                y = 270;
+                break;
+            case 4:
+                x = 0;
+                y = 270;
+                break;
+            case 5:
+                x = 0;
+                y = 270;
+                break;
+            case 6:
+                x = 0;
+                y = 270;
+                break;
+            case 7:
+                x = 90;
+                y = 90;
+                break;
+            case 8:
+                x = 0;
+                y = 270;
+                break;
+            case 9:
+                x = 0;
+                y = 270;
+                break;
+            default:
+                break;
+        }
+        var hourHand = document.getElementById("hourHandminuteleft18");
+        var minuteHand = document.getElementById("minuteHandminuteleft18");
+        hourHand.style.transform = "rotate(" + x + "deg)";
+        minuteHand.style.transform = "rotate(" + y + "deg)";
+    };
+    
+    
+    
+    function hourright(a){
+        rotateHandshourright1(a);
+        rotateHandshourright2(a);
+        rotateHandshourright3(a);
+        rotateHandshourright4(a);
+        rotateHandshourright5(a);
+        rotateHandshourright6(a);
+        rotateHandshourright7(a);
+        rotateHandshourright8(a);
+        rotateHandshourright9(a);
+        rotateHandshourright10(a);
+        rotateHandshourright11(a);
+        rotateHandshourright12(a);
+        rotateHandshourright13(a);
+        rotateHandshourright14(a);
+        rotateHandshourright15(a);
+        rotateHandshourright16(a);
+        rotateHandshourright17(a);
+        rotateHandshourright18(a);
+    };
+    function hourleft (a) {
+        rotateHandshourleft1(a);
+        rotateHandshourleft2(a);
+        rotateHandshourleft3(a);
+        rotateHandshourleft4(a);
+        rotateHandshourleft5(a);
+        rotateHandshourleft6(a);
+        rotateHandshourleft7(a);
+        rotateHandshourleft8(a);
+        rotateHandshourleft9(a);
+        rotateHandshourleft10(a);
+        rotateHandshourleft11(a);
+        rotateHandshourleft12(a);
+        rotateHandshourleft13(a);
+        rotateHandshourleft14(a);
+        rotateHandshourleft15(a);
+        rotateHandshourleft16(a);
+        rotateHandshourleft17(a);
+        rotateHandshourleft18(a);
+    }
+    function minuteright (a) {
+        rotateHandsminuteright1(a);
+        rotateHandsminuteright2(a);
+        rotateHandsminuteright3(a);
+        rotateHandsminuteright4(a);
+        rotateHandsminuteright5(a);
+        rotateHandsminuteright6(a);
+        rotateHandsminuteright7(a);
+        rotateHandsminuteright8(a);
+        rotateHandsminuteright9(a);
+        rotateHandsminuteright10(a);
+        rotateHandsminuteright11(a);
+        rotateHandsminuteright12(a);
+        rotateHandsminuteright13(a);
+        rotateHandsminuteright14(a);
+        rotateHandsminuteright15(a);
+        rotateHandsminuteright16(a);
+        rotateHandsminuteright17(a);
+        rotateHandsminuteright18(a);
+    }
+    function minuteleft (a) {
+        rotateHandsminuteleft1(a);
+        rotateHandsminuteleft2(a);
+        rotateHandsminuteleft3(a);
+        rotateHandsminuteleft4(a);
+        rotateHandsminuteleft5(a);
+        rotateHandsminuteleft6(a);
+        rotateHandsminuteleft7(a);
+        rotateHandsminuteleft8(a);
+        rotateHandsminuteleft9(a);
+        rotateHandsminuteleft10(a);
+        rotateHandsminuteleft11(a);
+        rotateHandsminuteleft12(a);
+        rotateHandsminuteleft13(a);
+        rotateHandsminuteleft14(a);
+        rotateHandsminuteleft15(a);
+        rotateHandsminuteleft16(a);
+        rotateHandsminuteleft17(a);
+        rotateHandsminuteleft18(a);
+    }
+    function clockrealtime() {
+        var now = new Date();
+        var hours = now.getHours();
+        var a = Math.floor(hours / 10); // Chữ số hàng chục
+        var b = hours % 10 ; // Chữ số hàng đơn vị
+        var minutes = now.getMinutes();
+        var c = Math.floor(minutes / 10); // Chữ số hàng chục
+        var d = minutes % 10 ; // Chữ số hàng đơn vị
+        hourleft (a);
+        hourright(b);
+        minuteleft(c);
+        minuteright(d);
+    };
+    function setcountingtime(hours,minutes){
+        var a = Math.floor(hours / 10);
+        var b = hours % 10 ;
+        var c = Math.floor(minutes / 10);
+        var d = minutes % 10 ;
+        hourleft (a);
+        hourright(b);
+        minuteleft(c);
+        minuteright(d);
+    }
+
+
+
+    var stopCounting = false;
+
+    function counting() {
+        var i = 0;
+        var j = 0;
+
+        var countNext = function () {
+            if (stopCounting) {
+            return; // Dừng hàm nếu biến cờ stopCounting được đặt thành true
+            }
+
+            setcountingtime(i, j);
+
+            j++;
+            if (j >= 60) {
+            j = 0;
+            i++;
+            }
+
+            if (i < 24) {
+            setTimeout(countNext, 1000);
+            }
+        };
+
+        countNext();
+    }
+    function runandstop(a) {
+        if (a == 1){
+            stopCounting = true;
+            this.intervalId  = setInterval(clockrealtime, 1000);
+        }
+        if (a == 2){
+            stopCounting = false;
+            clearInterval(this.intervalId);
+            counting();
+        }
+    }
+    const checkbox = document.getElementById('checkbox-29');
+    const label = document.querySelector('label[for="checkbox-29"]');
+
+    function runcheckbox() {
+    if (!this.checked) {
+        label.textContent = 'REALTIME';
+        runandstop(1);
+    } else {
+        runandstop(2);
+        label.textContent = 'COUNTING TIME';
+    }
+    }
+    runandstop(1)
+    checkbox.addEventListener('change', runcheckbox);
+    
+  </script>
+</body>
+</html>
